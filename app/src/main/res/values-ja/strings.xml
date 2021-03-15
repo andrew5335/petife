@@ -1,0 +1,262 @@
+<resources>
+    <string name="app_name">Petife</string>
+
+    <string name="rssi">%d dBm</string>
+    <string name="feed_info">%d g / %d 回</string>
+    <string name="water_info">%d ml / %d 回</string>
+
+    <string name="male">男性</string>
+    <string name="female">女性</string>
+
+    <string name="birthday">%d-%d-%d- / %d 歳</string>
+    <string name="kind_and_weight">%s / %s kg</string>
+
+    <string name="time">%d:%d</string>
+    <string name="minute_latency">%d</string>
+    <string name="amount">%d</string>
+
+    <string name="date">%d-%d-%d-</string>
+    <string name="input_message">入力してください</string>
+
+    <string name="notice_wifi_connect1">%sに接続してください</string>
+    <string name="notice_wifi_connect2">%sと接続した後進行し"</string>
+    <string name="notice_connection_info">%s</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="set">設定</string>
+    <string name="unset">解除</string>
+
+    <!--언어별 텍스트-->
+    <string name="appTitle">Petife</string>
+    <!--1. Login-->
+    <string name="titleText">ログイン</string>
+    <string name="googleLogin">Google</string>
+    <string name="facebookLogin">Facebook</string>
+    <string name="snsRestrict">スマートフォンで利用できるSNSアカウントは一つに限定されます。</string>
+    <!--2. Left Menu-->
+    <string name="addDevice">機器追加</string>
+    <string name="petSetting">ペットの設定</string>
+    <string name="manageFriend">友達管理</string>
+    <string name="addFriend">友達追加</string>
+    <string name="logOut">Logout</string>
+    <string name="delDevice">機器削除</string>
+    <!--3. Pet Setting-->
+    <string name="goBack">戻る</string>
+    <string name="petInfo">ペット情報</string>
+    <string name="myPetInfo">私ペット情報</string>
+    <string name="enterPetInfo">私ペット情報を入力してください</string>
+    <string name="store">保存</string>
+    <string name="addPhoto">写真を追加</string>
+    <string name="name">名前</string>
+    <string name="writeName">名前を入力してください.</string>
+    <string name="birth">誕生日</string>
+    <string name="writeBirth">誕生日</string>
+    <string name="today"></string>
+    <string name="petAge">0歳</string>
+    <string name="maleFemale">男 女</string>
+    <string name="breed">品種</string>
+    <string name="breedWeight">品種/体重</string>
+    <string name="enterBreed">品種を入力してください.</string>
+    <string name="weight">2.2kg</string>
+    <string name="importPhoto">写真の読み込み</string>
+    <!--4. Add Friend-->
+    <string name="inviteFriend">友達申請</string>
+    <string name="cancel2">キャンセル</string>
+    <string name="invite">申し込み</string>
+    <string name="insertEmail">友達のメールアドレスを入力してください.</string>
+    <string name="cancel">閉め</string>
+    <string name="confirm">確認</string>
+    <string name="emailWait">E-mail 待つ</string>
+    <string name="emailAccept">E-mail 受諾</string>
+    <!--5. Manage Friend-->
+    <string name="control">受諾 / 遮断 / 削除 / はい</string>
+    <!--6. Add Device-->
+    <string name="petName">Petife (Pet name)</string>
+    <string name="petFemale">女性</string>
+    <string name="poodleEg">プードル / 2.2kg</string>
+    <string name="addDevice2">機器を追加してください.</string>
+    <!--7. Add Device2-->
+    <string name="petifeSearch">Petife 検索</string>
+    <string name="next">次の</string>
+    <string name="connectPetife">Petife を接続し</string>
+    <string name="regDevice">1. Petife機器を登録します。</string>
+    <string name="setRouter">2. ルータを設定します。</string>
+    <string name="close">閉め</string>
+    <string name="wifiSet">WIFI 設定</string>
+    <string name="tryPetife">Petifeに接続中です</string>
+    <string name="refresh">更新</string>
+    <string name="refreshScreen">もしWI-FIが検出されない場合、リフレッシュしてください</string>
+    <string name="password">パスワード</string>
+    <string name="displayPwd">パスワードを表示</string>
+    <string name="enterPwd">パスワードを入力してください</string>
+    <string name="lastStep">最後のステップです</string>
+    <string name="setOwnPetife">自分のPetife名前を設定します。</string>
+    <string name="regComplete">登録完了しました</string>
+    <string name="conWifi">に接続し</string>
+    <!--8. main-->
+    <string name="petDiary">育児日記</string>
+    <string name="statistics">統計</string>
+    <string name="camera">カメラ</string>
+    <string name="feed">給食</string>
+    <string name="water">給水</string>
+    <!--9. pet diary calendar-->
+    <string name="today2">今日</string>
+    <!--10. pet diary input-->
+    <string name="addPhoto2">写真/動画を追加</string>
+    <string name="title">タイトル</string>
+    <string name="enterTitle">タイトルを入力してください</string>
+    <string name="instDtm">作成日</string>
+    <string name="content">内容</string>
+    <string name="enterContent">内容を入力してください。</string>
+    <string name="getGalleryPhoto">ギャラリーから写真をインポートする</string>
+    <string name="getGalleryVideo">ギャラリーで動画をインポート</string>
+    <string name="getAppPhoto">アプリから写真を読み込む</string>
+    <string name="getAppVideo">アプリで動画をインポート</string>
+    <!--11. setting-->
+    <string name="serveMode">配食モードの設定</string>
+    <string name="lockOperationKey">Petife の前面操作キーロック</string>
+    <string name="syncTime">Petife の時刻同期</string>
+    <string name="init">Petife の初期化</string>
+    <string name="delete">Petife の削除</string>
+    <string name="selectServeMode">配食モードを選択します</string>
+    <string name="saveServeMode">配食モードを保存しました。</string>
+    <string name="failServeMode">配食モードの保存に失敗しました</string>
+    <string name="modeSelect">手動/自動/自律</string>
+    <string name="lockPetife">本当に前面操作キーをロックするでしょうか？</string>
+    <string name="setRelease">設定/解除</string>
+    <string name="initPetife">本当に初期化したいですか？</string>
+    <string name="cancelOk">キャンセル/確認</string>
+    <string name="deletePetife">本当に削除しますか？</string>
+    <!--12. manual feed-->
+    <string name="feedMode">給食モード</string>
+    <string name="feedSetting">給食設定</string>
+    <string name="manualFeedSetting">手動供給の設定</string>
+    <string name="startFeed">供給する</string>
+    <string name="feedLevel">給食レベル</string>
+    <string name="closeConfirm">閉め/確認</string>
+    <!--13. manual water-->
+    <string name="waterMode">給水モード</string>
+    <string name="waterSetting">給水設定</string>
+    <string name="startWater">給水する</string>
+    <string name="waterLevel">給水レベル</string>
+    <!--14. auto feed-->
+    <string name="feedSchedule">給食設定</string>
+    <string name="timeLevel">時間/レベル</string>
+    <string name="addSchedule">スケジュールの追加</string>
+    <!--15. auto water-->
+    <string name="waterSchedule">給水設定</string>
+    <!--16. free feed-->
+    <string name="timeInterval">時間 間隔</string>
+    <string name="autoFeedInterval">自律供給間隔</string>
+    <string name="thirtyInterval">30分間隔</string>
+    <string name="save">保存する</string>
+    <!--17. etc-->
+    <string name="menuHome">Home</string>
+    <string name="feedChart">給食統計</string>
+    <string name="setting">設定</string>
+    <string name="currentWindow">Current Window</string>
+    <string name="complete">完了</string>
+    <string name="sex">性別</string>
+    <string name="weight2">体重</string>
+    <string name="manualFeed">ご飯サイクルを手動</string>
+    <string name="autoFeed">ご飯サイクルの自動</string>
+    <string name="manualWater">水やりを手動</string>
+    <string name="autoWater">水やりの自動</string>
+    <string name="autoMode">自律モード</string>
+    <string name="turnOnLamp">ランプのオン</string>
+    <string name="turnOffLamp">ランプオフ</string>
+    <string name="reqStatus">状態要求</string>
+    <string name="setTime">時間設定</string>
+    <string name="reset">初期化</string>
+    <string name="deviceName">機器名</string>
+    <string name="hour">時</string>
+    <string name="minute">分</string>
+    <string name="second">超</string>
+    <string name="level">レベル</string>
+    <string name="reserveFeedSch">予約の供給予定</string>
+    <string name="addReserveSch">スケジュールを追加</string>
+    <string name="time2">時間</string>
+    <string name="ageWeight">2歳 / 3kg</string>
+    <string name="step1">1. 携帯電話のWI-FIとGPSをオンにしてください。</string>
+    <string name="step2">2. スマートフォンのネットワーク設定でSSIDを選択し後ろ\n＆＃160;＆＃160;＆＃160;＆＃160;またアプリに戻ってくる。\n＆＃160;＆＃160;＆＃160;＆＃160;（SSID：LTH_XXXXXまたはPetifeXXXXXXX）
+（SSID：LTH_XXXXXまたはPetifeXXXXXXX）</string>
+    <string name="step22">（SSID：LTH_XXXXXまたはPetifeXXXXXXX）</string>
+    <string name="step3">3. ルータ（2.4Ghz）とパスワードを入力してください。</string>
+    <string name="step4">4. スマートフォンのネットワーク設定でルータを\n＆＃160;＆＃160;＆＃160;＆＃160;＆＃160;選択された後ろアプリに戻って下さい。</string>
+    <string name="step5">5. 機器の名前を登録して下さい。</string>
+    <!--string name="step2">2. 携帯電話のWI-FI設定で接続ペットチペを選択します。</string>
+    <string name="step3">3. 画面に戻って、次のをクリックしてください</string-->
+    <string name="conSsid">SSIDに接続します</string>
+    <string name="step11">1. 選択したWI-FIに接続しています</string>
+    <string name="step12">2. 選択したWI-FIに接続された後、上部の次のボタンを押してください</string>
+    <string name="settingPetife">ペットチペを設定しています</string>
+    <string name="regFail">登録に失敗しました</string>
+    <string name="basicSetting">デフォルトの設定</string>
+    <string name="deviceSetting">機器の設定</string>
+    <string name="friendSetting">友達設定</string>
+    <string name="petifeNameMode">Petife名/モード</string>
+    <string name="dayOfWeek">曜日</string>
+    <string name="date2">日</string>
+    <string name="location">位置</string>
+    <string name="reserveFeed">予約の供給 ： 360g / 2回</string>
+    <string name="reserveWater">予約給水 ： 240ml / 2回</string>
+    <string name="petBirthAge">2015.02.14（4歳）</string>
+    <string name="manualFeed2">手動供給</string>
+    <string name="viewMore">その他</string>
+    <string name="connect">接続する</string>
+    <string name="noFeedSet">設定された供給/給水はありません</string>
+    <string name="status">状態</string>
+    <string name="email">メール</string>
+    <string name="signalLevel">信号強度</string>
+    <string name="frontLockKeySave">フロントロックキーの状態を保存しました</string>
+    <string name="frontLockKeyFail">フロントロックキーの状態の保存に失敗しました</string>
+    <string name="syncTimeSuccess">時刻同期に成功しました</string>
+    <string name="syncTimeFail">時刻同期に失敗しました</string>
+    <string name="initComplete">初期化が完了しました</string>
+    <string name="petifeDelete">ペットチペを削除しました</string>
+    <string name="petifeDelFail">ペットチペ削除に失敗しました</string>
+    <string name="saveComplete">設定の保存を終了しました</string>
+    <string name="petInfoSave">ペットの情報を保存しました</string>
+    <string name="cancelComplete">キャンセルされました</string>
+    <string name="choice">選択</string>
+    <string name="manageReserveSche">スケジュール管理</string>
+    <string name="deleteReserveSche">このスケジュールを削除しますか？</string>
+    <string name="exceedReserveSche">予約の供給スケジュールを5つを超えることはできません</string>
+    <string name="feedSuccess">供給に成功しました。</string>
+    <string name="feedFail">供給失敗しました。</string>
+    <string name="waterSuccess">給水成功しました</string>
+    <string name="waterFail">給水失敗しました</string>
+    <string name="friendRestrict">友人は権限がありません</string>
+    <string name="alert">通知</string>
+    <string name="checkConnection">インターネット接続を確認してください.</string>
+    <string name="delete2">削除</string>
+    <string name="wifiSelect">接続 WIFI 選択</string>
+    <string name="wifiConnect">WIFI接続</string>
+    <string name="petifeSetting">Petife設定</string>
+    <string name="manual">手動</string>
+    <string name="reserve">予約</string>
+    <string name="free">自律</string>
+    <string name="setting2">設定</string>
+    <string name="release">オフ</string>
+    <string name="readFailPetife">Petife設定の読み取りに失敗しました.</string>
+    <string name="write">作成</string>
+    <string name="modify">修正</string>
+    <string name="settingPet">ペットを設定します。</string>
+    <string name="shutdown">Petifeを入れ直してください</string>
+    <string name="checkGps">GPSを使用可能に設定してください</string>
+    <string name="goGps">GPSの設定に移動</string>
+    <string name="error">エラーです.</string>
+    <string name="trylater">しばらくしてもう一度試してください</string>
+    <string name="reset2">リセットボタンを押して、初期化した後、再進行してください</string>
+    <string name="usimAlert">理想主義的なカードが存在しないかの確認がされていません.</string>
+    <string name="tooltipSpeaker">スピーカー</string>
+    <string name="tooltipMic">マイク</string>
+    <string name="tooltipRec">録画</string>
+    <string name="tooltipCamera">写真</string>
+    <string name="tooltipFeed">ご飯サイクル</string>
+    <string name="tooltipWater">水やり</string>
+    <string name="tooltipFlash">照明</string>
+    <string name="searchWifi">WI-FIリストをもらってくるのです.</string>
+</resources>

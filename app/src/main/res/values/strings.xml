@@ -1,0 +1,261 @@
+<resources>
+    <string name="app_name">Petife</string>
+
+    <string name="rssi">%d dBm</string>
+    <string name="feed_info">%d g / %d 회</string>
+    <string name="water_info">%d ml / %d 회</string>
+
+    <string name="male">남자</string>
+    <string name="female">여자</string>
+
+    <string name="birthday">%d년 %d월 %d일 / %d 살</string>
+    <string name="kind_and_weight">%s / %s kg</string>
+
+    <string name="time">%d시  %d분</string>
+    <string name="minute_latency">%d분</string>
+    <string name="amount">%d</string>
+
+    <string name="date">%d년 %d월 %d일</string>
+    <string name="input_message">입력하세요</string>
+
+    <string name="notice_wifi_connect1">%s에 연결해주세요</string>
+    <string name="notice_wifi_connect2">%s와 연결 후 진행하세요"</string>
+    <string name="notice_connection_info">%s</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="set">설정</string>
+    <string name="unset">해제</string>
+
+    <!--언어별 텍스트-->
+    <string name="appTitle">Petife</string>
+    <!--1. Login-->
+    <string name="titleText">로그인</string>
+    <string name="googleLogin">구글</string>
+    <string name="facebookLogin">페이스북</string>
+    <string name="snsRestrict">스마트폰에서 이용할 수 있는 SNS계정은 한 가지로 제한됩니다.</string>
+    <!--2. Left Menu-->
+    <string name="addDevice">기기추가</string>
+    <string name="petSetting">펫설정</string>
+    <string name="manageFriend">친구관리</string>
+    <string name="addFriend">친구추가</string>
+    <string name="logOut">로그아웃</string>
+    <string name="delDevice">기기삭제</string>
+    <!--3. Pet Setting-->
+    <string name="goBack">뒤로가기</string>
+    <string name="petInfo">펫 정보</string>
+    <string name="myPetInfo">내 펫 정보</string>
+    <string name="enterPetInfo">내 펫 정보를 입력하세요</string>
+    <string name="store">저장</string>
+    <string name="addPhoto">사진 추가</string>
+    <string name="name">이름</string>
+    <string name="writeName">이름을 입력하세요.</string>
+    <string name="birth">생일</string>
+    <string name="writeBirth">생일을 입력하세요.</string>
+    <string name="today"></string>
+    <string name="petAge">0살</string>
+    <string name="maleFemale">남자 여자</string>
+    <string name="breed">품종</string>
+    <string name="breedWeight">품종/체중</string>
+    <string name="enterBreed">품종을 입력하세요.</string>
+    <string name="weight">2.2kg</string>
+    <string name="importPhoto">사진 가져오기</string>
+    <!--4. Add Friend-->
+    <string name="inviteFriend">친구신청</string>
+    <string name="cancel2">취소</string>
+    <string name="invite">신청</string>
+    <string name="insertEmail">친구의 E-mail을 입력하세요.</string>
+    <string name="cancel">닫기</string>
+    <string name="confirm">확인</string>
+    <string name="emailWait">이메일 대기</string>
+    <string name="emailAccept">이메일 수락</string>
+    <!--5. Manage Friend-->
+    <string name="control">수락/차단/삭제/닫기</string>
+    <!--6. Add Device-->
+    <string name="petName">Petife (펫 이름)</string>
+    <string name="petFemale">여자</string>
+    <string name="poodleEg">푸들 / 2.2kg</string>
+    <string name="addDevice2">기기를 추가하세요.</string>
+    <!--7. Add Device2-->
+    <string name="petifeSearch">Petife 검색</string>
+    <string name="next">다음</string>
+    <string name="connectPetife">Petife를 연결하세요.</string>
+    <string name="regDevice">1. Petife 기기를 등록합니다.</string>
+    <string name="setRouter">2. 공유기를 설정합니다.</string>
+    <string name="close">닫기</string>
+    <string name="wifiSet">WIFI 설정</string>
+    <string name="tryPetife">Petife에 연결 중입니다.</string>
+    <string name="refresh">새로고침</string>
+    <string name="refreshScreen">만약 WI-FI가 검색되지 않으면 새로고침 하세요</string>
+    <string name="password">비밀번호</string>
+    <string name="displayPwd">비밀번호 표시</string>
+    <string name="enterPwd">비밀번호를 입력하세요.</string>
+    <string name="lastStep">마지막 단계입니다.</string>
+    <string name="setOwnPetife">나만의 Petife 이름을 설정하세요.</string>
+    <string name="regComplete">등록 완료되었습니다.</string>
+    <string name="conWifi">에 연결하세요.</string>
+    <!--8. main-->
+    <string name="petDiary">육아일기</string>
+    <string name="statistics">통계</string>
+    <string name="camera">카메라</string>
+    <string name="feed">급식</string>
+    <string name="water">급수</string>
+    <!--9. pet diary calendar-->
+    <string name="today2">Today</string>
+    <!--10. pet diary input-->
+    <string name="addPhoto2">사진/동영상추가</string>
+    <string name="title">제목</string>
+    <string name="enterTitle">제목을 입력하세요.</string>
+    <string name="instDtm">작성일</string>
+    <string name="content">내용</string>
+    <string name="enterContent">내용을 입력하세요.</string>
+    <string name="getGalleryPhoto">갤러리에서 사진 가져오기</string>
+    <string name="getGalleryVideo">갤러리에서 동영상 가져오기</string>
+    <string name="getAppPhoto">앱에서 사진 가져오기</string>
+    <string name="getAppVideo">앱에서 동영상 가져오기</string>
+    <!--11. setting-->
+    <string name="serveMode">배식모드 설정</string>
+    <string name="lockOperationKey">Petife 전면 동작키 잠금</string>
+    <string name="syncTime">Petife 시간 동기화</string>
+    <string name="init">Petife 초기화</string>
+    <string name="delete">Petife 삭제</string>
+    <string name="selectServeMode">배식모드를 선택하세요.</string>
+    <string name="saveServeMode">배식모드를 저장하였습니다</string>
+    <string name="failServeMode">배식모드 저장에 실패하였습니다</string>
+    <string name="modeSelect">수동/자동/자율</string>
+    <string name="lockPetife">정말 전면 동작키를 잠글까요?</string>
+    <string name="setRelease">설정/해제</string>
+    <string name="initPetife">정말 초기화할까요?</string>
+    <string name="cancelOk">취소/확인</string>
+    <string name="deletePetife">정말 삭제할까요?</string>
+    <!--12. manual feed-->
+    <string name="feedMode">급식모드</string>
+    <string name="feedSetting">급식 설정</string>
+    <string name="manualFeedSetting">수동 급식 설정</string>
+    <string name="startFeed">급식하기</string>
+    <string name="feedLevel">급식 수준</string>
+    <string name="closeConfirm">닫기/확인</string>
+    <!--13. manual water-->
+    <string name="waterMode">급수모드</string>
+    <string name="waterSetting">급수설정</string>수
+    <string name="startWater">급수하기</string>
+    <string name="waterLevel">급수수준</string>
+    <!--14. auto feed-->
+    <string name="feedSchedule">급식 일정</string>
+    <string name="timeLevel">시간/수준</string>
+    <string name="addSchedule">일정 추가</string>
+    <!--15. auto water-->
+    <string name="waterSchedule">급수 일정</string>
+    <!--16. free feed-->
+    <string name="timeInterval">시간 간격</string>
+    <string name="autoFeedInterval">자율 급식 간격</string>
+    <string name="thirtyInterval">30분 간격</string>
+    <string name="save">저장하기</string>
+    <!--17. etc-->
+    <string name="menuHome">홈</string>
+    <string name="feedChart">식사통계</string>
+    <string name="setting">설정</string>
+    <string name="currentWindow">현재 창</string>
+    <string name="complete">완료</string>
+    <string name="sex">성별</string>중
+    <string name="weight2">체중</string>
+    <string name="manualFeed">밥주기 수동</string>
+    <string name="autoFeed">밥주기 자동</string>
+    <string name="manualWater">물주기 수동</string>
+    <string name="autoWater">물주기 자동</string>
+    <string name="autoMode">자율 모드</string>
+    <string name="turnOnLamp">램프 켜기</string>
+    <string name="turnOffLamp">램프 끄기</string>
+    <string name="reqStatus">상태 요청</string>
+    <string name="setTime">시간 설정</string>
+    <string name="reset">초기화</string>
+    <string name="deviceName">기기이름</string>
+    <string name="hour">시</string>
+    <string name="minute">분</string>
+    <string name="second">초</string>
+    <string name="level">수준</string>
+    <string name="reserveFeedSch">예약 급식 일정</string>
+    <string name="addReserveSch">예약 일정 추가</string>
+    <string name="time2">시간</string>
+    <string name="ageWeight">2살 / 3kg</string>
+    <string name="step1">1. 휴대폰의 WI-FI와 GPS를 켜주세요.</string>
+    <string name="step2">2. 스마트폰의 네트워크 설정에서 SSID를 선택한 뒤에\n&#160;&#160;&#160;&#160;다시 앱으로 돌아오세요.\n&#160;&#160;&#160;&#160;(SSID : LTH_XXXXX 또는 PetifeXXXXXXX)</string>
+    <string name="step22">(SSID : LTH_XXXXX 또는 PetifeXXXXXXX)</string>
+    <string name="step3">3. 공유기(2.4Ghz)와 비밀번호를 입력하세요.</string>
+    <string name="step4">4. 스마트폰의 네트워크 설정에서 공유기를\n&#160;&#160;&#160;&#160;&#160;선택한 뒤 앱으로 돌아오세요.</string>
+    <string name="step5">5. 기기 이름을 등록하세요.</string>
+    <!--string name="step2">2. 휴대폰의 WI-FI 설정에서 연결할 펫티페를 선택하세요</string>
+    <string name="step3">3. 화면으로 돌아와 다음을 누르세요</string-->에
+    <string name="conSsid">SSID에 연결합니다.</string>
+    <string name="step11">1. 선택하신 WI-FI에 연결중입니다.</string>
+    <string name="step12">2. 선택하신 WI-FI에 연결된 후 상단의 다음 버튼을 눌러주세요.</string>
+    <string name="settingPetife">펫티페를 설정 중입니다.</string>
+    <string name="regFail">등록 실패하였습니다</string>
+    <string name="basicSetting">기본 설정</string>
+    <string name="deviceSetting">기기 설정</string>
+    <string name="friendSetting">친구 설정</string>
+    <string name="petifeNameMode">Petife 이름 / 모드</string>
+    <string name="dayOfWeek">요일</string>
+    <string name="date2">날짜</string>
+    <string name="location">위치</string>
+    <string name="reserveFeed">예약 급식 : 360g  / 2회</string>
+    <string name="reserveWater">예약 급수 : 240ml / 2회</string>
+    <string name="petBirthAge">2015.02.14 (4살)</string>
+    <string name="manualFeed2">수동 급식</string>
+    <string name="viewMore">더 보기</string>
+    <string name="connect">연결하기</string>
+    <string name="noFeedSet">설정된 급식/급수가 없습니다</string>
+    <string name="status">상태</string>
+    <string name="email">이메일</string>
+    <string name="signalLevel">신호세기</string>
+    <string name="frontLockKeySave">전면 잠금키 상태를 저장하였습니다</string>
+    <string name="frontLockKeyFail">전면 잠금키 상태 저장에 실패하였습니다</string>
+    <string name="syncTimeSuccess">시간 동기화에 성공하였습니다</string>
+    <string name="syncTimeFail">시간 동기화에 실패하였습니다</string>
+    <string name="initComplete">초기화를 완료하였습니다</string>
+    <string name="petifeDelete">펫티페를 삭제하였습니다</string>
+    <string name="petifeDelFail">펫티페 삭제에 실패하였습니다</string>
+    <string name="saveComplete">설정 저장을 완료하였습니다</string>
+    <string name="petInfoSave">펫 정보를 저장하였습니다</string>
+    <string name="cancelComplete">취소 되었습니다</string>
+    <string name="choice">선택</string>
+    <string name="manageReserveSche">예약 일정 관리</string>
+    <string name="deleteReserveSche">이 예약 일정을 삭제할까요?</string>
+    <string name="exceedReserveSche">예약 급식 일정을 5개 초과할 수 없습니다</string>
+    <string name="feedSuccess">급식 성공했습니다</string>
+    <string name="feedFail">급식 실패했습니다</string>
+    <string name="waterSuccess">급수 성공했습니다</string>
+    <string name="waterFail">급수 실패했습니다</string>
+    <string name="friendRestrict">친구는 권한이 없습니다.</string>
+    <string name="alert">알림</string>
+    <string name="checkConnection">인터넷 연결을 확인하세요.</string>
+    <string name="delete2">삭제</string>
+    <string name="wifiSelect">연결할 WIFI 선택</string>
+    <string name="wifiConnect">WIFI 연결</string>
+    <string name="petifeSetting">Petife 설정</string>
+    <string name="manual">수동</string>
+    <string name="reserve">예약</string>
+    <string name="free">자율</string>
+    <string name="setting2">설정</string>
+    <string name="release">해제</string>
+    <string name="readFailPetife">Petife 설정 읽기에 실패하였습니다.</string>
+    <string name="write">작성</string>
+    <string name="modify">수정</string>
+    <string name="settingPet">펫을 설정하세요.</string>
+    <string name="shutdown">Petife 전원을 껐다 켜주세요</string>
+    <string name="checkGps">GPS를 사용가능하게 설정하세요</string>
+    <string name="goGps">GPS 설정으로 이동</string>류
+    <string name="error">오류입니다.</string>
+    <string name="trylater">잠시 후 다시 시도하세요</string>
+    <string name="reset2">리셋 버튼을 눌러 초기화 후 다시 진행해주세요</string>
+    <string name="usimAlert">유심 카드가 없거나 확인이 되지 않습니다.</string>
+    <string name="tooltipSpeaker">스피커</string>
+    <string name="tooltipMic">마이크</string>
+    <string name="tooltipRec">녹화</string>
+    <string name="tooltipCamera">사진찍기</string>
+    <string name="tooltipFeed">밥주기</string>
+    <string name="tooltipWater">물주기</string>
+    <string name="tooltipFlash">조명</string>
+    <string name="searchWifi">WI-FI 목록을 받아오는 중입니다.</string>
+</resources>

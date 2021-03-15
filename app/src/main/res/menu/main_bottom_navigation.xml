@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/menuHome"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_post"
+        android:icon="@drawable/ic_book"
+        android:title="@string/petDiary"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_feed_chart"
+        android:enabled="true"
+        android:icon="@drawable/ic_timeline"
+        android:title="@string/feedChart"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/setting"
+        app:showAsAction="ifRoom" />
+</menu>

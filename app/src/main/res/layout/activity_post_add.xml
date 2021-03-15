@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="post"
+            type="kr.co.ainus.petife2.model.room.Post" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_gray"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            tools:context=".view.activity.PetSettingActivity">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <ImageView
+                    android:src="@drawable/ic_baseline_add_photo_alternate_24px"
+                    android:id="@+id/iv_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@color/gray"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="4:3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:photoUri="@{post.uri}" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btn_photo_or_video_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/addPhoto2"
+                app:layout_constraintTop_toBottomOf="@id/iv_photo" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/title" />
+
+                <EditText
+                    android:id="@+id/et_title"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLength="12"
+                    android:background="@color/transparent"
+                    android:drawableRight="@drawable/ic_arrow_next_small"
+                    android:gravity="end|center_vertical"
+                    android:hint="@string/enterTitle"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@={post.title}"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/instDtm" />
+
+                <Button
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
+                    android:id="@+id/btn_date"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:drawableEnd="@drawable/ic_arrow_next_small"
+                    android:gravity="end|center_vertical"
+                    android:hint="@string/instDtm"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@{@string/date(post.year, post.month, post.day)}"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/content" />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/et_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/transparent"
+                    android:gravity="start|top"
+                    android:padding="16dp"
+                    android:ems="10"
+                    android:hint="@string/enterContent"
+                    android:inputType="textMultiLine"
+                    android:text="@={post.message}" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

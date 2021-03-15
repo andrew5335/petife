@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="pet"
+            type="kr.co.ainus.petife2.model.Pet" />
+
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/dl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.activity.MainActivity">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_h_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="0dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_h_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.3" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_h_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.37" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_h_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <View
+                android:id="@+id/view_pet_info"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toBottomOf="@id/guide_h_2"
+                app:layout_constraintTop_toTopOf="@id/guide_h_1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/view_pet_info"
+                app:layout_constraintLeft_toLeftOf="@id/view_pet_info"
+                app:layout_constraintRight_toRightOf="@id/view_pet_info"
+                app:layout_constraintTop_toTopOf="@id/view_pet_info">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ci"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/bg_circle_gray"
+                    app:glideUriPet="@{pet.photoUri}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintHeight_percent="0.7"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/ll_pet_info"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/ll_pet_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ci"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:hint="@string/petSetting"
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{pet.name}"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/tv_birthday"
+                        app:layout_constraintLeft_toRightOf="@id/ci"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/tv_birthday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/birth"
+                        android:text="@{@string/birthday(pet.birthYear, pet.birthMonth, pet.birthDay, pet.age)}"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/tv_gender"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_name"
+                        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+                    <TextView
+                        android:id="@+id/tv_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:drawableRight="@{pet.gender.equals(`m`) ? @drawable/ic_male : @drawable/ic_female}"
+                        android:drawablePadding="8dp"
+                        android:hint="@string/maleFemale"
+                        android:text="@{pet.gender.equals(`m`) ? @string/male : @string/female}"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/tv_kind_weight"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_name"
+                        app:layout_constraintLeft_toRightOf="@id/ci"
+                        app:layout_constraintTop_toBottomOf="@id/tv_birthday" />
+
+                    <TextView
+                        android:id="@+id/tv_kind_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/breedWeight"
+                        android:text="@{@string/kind_and_weight(pet.kind, pet.weight)}"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_name"
+                        app:layout_constraintLeft_toRightOf="@id/ci"
+                        app:layout_constraintTop_toBottomOf="@id/tv_gender" />
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/petSetting"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/view_pet_info"
+                app:layout_constraintLeft_toLeftOf="@id/view_pet_info"
+                app:layout_constraintRight_toRightOf="@id/view_pet_info"
+                app:layout_constraintTop_toTopOf="@id/view_pet_info" />
+
+            <FrameLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/frameSize"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/guide_h_2">
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vp_2_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/guide_h_2" />
+
+                <me.relex.circleindicator.CircleIndicator3
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="bottom"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_message"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/guide_h_2"
+                app:layout_constraintBottom_toBottomOf="@id/guide_h_4">
+
+                <ImageView
+                    android:src="@drawable/petica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"/>
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/tv_petica_add_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/addDevice2"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/guide_h_4"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/guide_h_3" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                app:layout_constraintBottom_toBottomOf="@id/guide_h_2"
+                android:layout_height="1dp"
+                android:background="@color/div_white"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:menu="@menu/navigation_menu" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</layout>

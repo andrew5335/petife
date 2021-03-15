@@ -1,0 +1,210 @@
+{
+  "project_info": {
+    "project_number": "728831228618",
+    "firebase_url": "https://petica-9a063.firebaseio.com",
+    "project_id": "petica-9a063",
+    "storage_bucket": "petica-9a063.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728831228618:android:335ac9b06e61577d",
+        "android_client_info": {
+          "package_name": "kr.co.ainus.petica"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728831228618-e3nl2dte789t035u2dsif9ak0angv1ur.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.ainus.petica",
+            "certificate_hash": "433467a9aa746eb2528b990ba078ea055c745b93"
+          }
+        },
+        {
+          "client_id": "728831228618-5pe2uvnv0ihl6vrr302cl7lncks5kcuk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.ainus.petica",
+            "certificate_hash": "34e03bad2218ee0e383b705220674cea0013a3f7"
+          }
+        },
+        {
+          "client_id": "728831228618-6vba2nkpbhmirqj77mp9vku5s7dgnkv5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.ainus.petica",
+            "certificate_hash": "50fe486fffcefbcb4cb477373fe824dc9a29c682"
+          }
+        },
+        {
+          "client_id": "728831228618-a46d07vpieb79cd8cemb4mhc2c5347p1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.ainus.petica",
+            "certificate_hash": "3738cbc666c061614afae0e74c910af63c7f86aa"
+          }
+        },
+        {
+          "client_id": "728831228618-ffcku5rk9oc8eteai8o7kuiavlbuv5hg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.ainus.petica",
+            "certificate_hash": "9bbd6ca118ae55c80bba852c7974a6cc1d5a1d4d"
+          }
+        },
+        {
+          "client_id": "728831228618-jkbpkgpc6is87iorb1b261uj4p9ag0lp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxzOTzB2thPtPrK_cP9-FMYds4wVJnB6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728831228618-jkbpkgpc6is87iorb1b261uj4p9ag0lp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "728831228618-o2oc5k1q4bdjslu2ghp0oj60cjt5u29t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ksrm.petica",
+                "app_store_id": "1462557565"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728831228618:android:93ae4e3b0136ee0ef29233",
+        "android_client_info": {
+          "package_name": "kr.co.ainus.petife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728831228618-hglk05co4vplje0amdfjf7qi9ncmahtq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.ainus.petife",
+            "certificate_hash": "a67a88571a46b7de0813c25a6aa9c65e220426fc"
+          }
+        },
+        {
+          "client_id": "728831228618-67pm1lakq53f9keafh69td4sv5ajt5ac.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.ainus.petife",
+            "certificate_hash": "433467a9aa746eb2528b990ba078ea055c745b93"
+          }
+        },
+        {
+          "client_id": "728831228618-letuvmorq56k7vam1cl8tt1srsg2seoq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.ainus.petife",
+            "certificate_hash": "34e03bad2218ee0e383b705220674cea0013a3f7"
+          }
+        },
+        {
+          "client_id": "728831228618-jkbpkgpc6is87iorb1b261uj4p9ag0lp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxzOTzB2thPtPrK_cP9-FMYds4wVJnB6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728831228618-jkbpkgpc6is87iorb1b261uj4p9ag0lp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "728831228618-o2oc5k1q4bdjslu2ghp0oj60cjt5u29t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ksrm.petica",
+                "app_store_id": "1462557565"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728831228618:android:007025016b0dcf30f29233",
+        "android_client_info": {
+          "package_name": "kr.co.ainus.petife2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728831228618-iicdad92dek3j778odut60gs8lee8re1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.ainus.petife2",
+            "certificate_hash": "a67a88571a46b7de0813c25a6aa9c65e220426fc"
+          }
+        },
+        {
+          "client_id": "728831228618-hfagv0h1pfodnobfgq1keokun7rvovcu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.ainus.petife2",
+            "certificate_hash": "433467a9aa746eb2528b990ba078ea055c745b93"
+          }
+        },
+        {
+          "client_id": "728831228618-u6d2josk098oga77qdv28m0coadp5ir9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.ainus.petife2",
+            "certificate_hash": "34e03bad2218ee0e383b705220674cea0013a3f7"
+          }
+        },
+        {
+          "client_id": "728831228618-jkbpkgpc6is87iorb1b261uj4p9ag0lp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxzOTzB2thPtPrK_cP9-FMYds4wVJnB6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728831228618-jkbpkgpc6is87iorb1b261uj4p9ag0lp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "728831228618-o2oc5k1q4bdjslu2ghp0oj60cjt5u29t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ksrm.petica",
+                "app_store_id": "1462557565"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:shared viewmodel factory-release:unspecified">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/shared viewmodel factory-release/build/.transforms/22ebd22ca05226abd6538b0cd564af3c/jetified-shared viewmodel factory-release/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/shared viewmodel factory-release/build/.transforms/22ebd22ca05226abd6538b0cd564af3c/jetified-shared viewmodel factory-release/res" />
+      <root url="file://$PROJECT_DIR$/shared viewmodel factory-release/build/.transforms/22ebd22ca05226abd6538b0cd564af3c/jetified-shared viewmodel factory-release/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

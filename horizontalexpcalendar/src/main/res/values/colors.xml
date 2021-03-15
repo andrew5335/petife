@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F6B77D</color>
+    <color name="colorPrimaryDark">#EF8870</color>
+    <color name="colorAccent">#EF8870</color>
+    <!--<color name="colorAccent">#ff8888</color>-->
+
+    <color name="sunday">#ff0000</color>
+    <color name="sathurday">#0000ff</color>
+    <color name="day_normal">#ffffff</color>
+
+    <color name="div">#eeeeee</color>
+
+    <color name="arrow">#cccccc</color>
+
+    <color name="transparent">#00ffffff</color>
+    <color name="light_gray">#eeeeee</color>
+    <color name="gray">#dddddd</color>
+
+    <color name="div_white">#FFF</color>
+
+    <!--<color name="today">#C51162</color>-->
+    <color name="today">#D50000</color>
+    <!--<color name="div_pink">#FFEEAC9B</color>-->
+
+</resources>

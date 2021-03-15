@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">설정</string>
+
+    <string name="main_help">도움말</string>
+    <string name="main_scan_indicator_title">자동급식수기 찾기</string>
+    <string name="main_scan_indicator">자동급식수기 찾는 중</string>
+
+    <string name="add_device_step0_title">자동급식수기 추가</string>
+    <string name="add_device_step0_local_title">로컬 자동급식수기</string>
+    <string name="add_device_step0_local_text">로컬 자동급식수기 설정</string>
+    <string name="add_device_step0_remote_title">원격 자동급식수기</string>
+    <string name="add_device_step0_remote_text">원격 자동급식수기 연결</string>
+
+    <string name="add_device_step01_title">로컬 자동급식수기 추가</string>
+    <string name="add_device_step01_easy_title">간편 설정</string>
+    <string name="add_device_step01_easy_text">간편 설정</string>
+    <string name="add_device_step01_ap_title">AP 모드 설정</string>
+
+    <string name="add_device_step1_ap_title">AP 모드 설정</string>
+    <string name="add_device_step1_ap_text">AP 모드 설정(원격)</string>
+    <string name="add_device_step1_ap_note">"1. \"간편 설정\"버튼을 5 초 동안 눌러 공장 출고 상태로 복원하십시오\n 2, 장치에 의해 설정된 핫스팟에 가입하기 위해 휴대폰 WLAN을 여세요\n3. 인터페이스로 돌아가서 다음을 클릭하여 RAK 장치에 연결하세요\n"</string>
+    <string name="add_device_step1_ap_btn">다음</string>
+    <string name="add_device_step1_ap_admin_title">등록 가능한 자동급식수기</string>
+    <string name="add_device_step1_ap_admin_failed">"등록 가낭한 자동급식수기가 없습니다. "</string>
+    <string name="add_device_step1_ap_wifi_failed">먼저 Wi-Fi 연결을 진행해 주세요.</string>
+    <string name="add_device_step1_ap_admin_connect_title">자동급식수기를 연결하고 있습니다.</string>
+    <string name="add_device_step1_ap_admin_connect_fail">자동급식수기 연결에 실패하였으니 다시 시도하세요.</string>
+    <string name="add_device_step1_ap_admin_connect_text">자동급식수기를 연결 진행하고 있습니다.</string>
+    <string name="add_device_step1_ap_admin_connect_ok">자동급식수기 연결에 성공하였습니다.</string>
+    <string name="add_device_step1_ap_admin_connect_failed">자동급식수기 연결에 실패하였으니 다시 시도하세요.</string>
+
+    <string name="add_device_step2_ap_note">" 1. 아이콘을 선택해 네트워크를 구성하세요 2. 선택한 Wi-Fi 네트워크 암호를 입력하세요 3. 장치가 네트워크에 연결되도록 구성하세요."</string>
+    <string name="add_device_step2_ap_scan_title">무선 네트워크 목록 가져오기</string>
+    <string name="add_device_step2_ap_scan_text">무선 네트워크 목록을 가져오고 있습니다.</string>
+    <string name="add_device_step2_ap_scan_failed">무선 네트워크 목록을 가져오는데 실패했습니다.</string>
+
+    <string name="add_device_step3_ap_note">" 1. 네트워크 무선 연결 설정을 연결합니다 2. 방금 등록한 무선 네트워크에 가입합니다 3. 등록된 자동급식수기를 검색하려면 다음을 클릭하십시오"</string>
+    <string name="add_device_step3_ap_error">스마트폰이 다른 네트워크에 구성되어 있습니다.</string>
+
+    <string name="add_device_remote_title">원격 자동급식수기 등록</string>
+    <string name="add_device_remote_text">원격 자동급식수기 등록</string>
+    <string name="add_device_remote_note">" 1. 원격 자동급식수기의 ID를 입력하십시오. 2. 완료 버튼을 선택하여 원격 자동급식수기 장치를 추가하십시오."</string>
+    <string name="add_device_remote_id_hint">원격 자동급식수기 ID를 입력하세요.</string>
+    <string name="add_device_remote_name_hint">자동급식수기의 이름을 입력하세요.</string>
+    <string name="add_device_remote_id_error">자동급식수기의 ID는 비워둘 수 없습니다.</string>
+    <string name="add_device_remote_name_error">자동급식수기의 이름은 비워둘 수 없습니다.</string>
+    <string name="add_device_remote_success">자동급식수기가 성공적으로 등록되었습니다.</string>
+    <string name="add_device_remote">등록</string>
+
+    <string name="add_device_step1_device1">자동급식수기 UFO</string>
+    <string name="add_device_step1_device2">자동급식수기 타기</string>
+    <string name="add_device_step1_title">간편 설정</string>
+    <string name="add_device_step1_text">간편 설정을 통해 자동급식수기를 등록하세요.</string>
+    <string name="add_device_step1_note">1. 자동급식수기에 전원이 커지고 장치가 초기화 될 때까지 30초 동안 기다리세요.  2. 스마트폰 연결을 위한 Wi-Fi 네트워크 암호를 입력하세요. 3. \"다음\"을 클릭하여 장치가 네트워크에 연결되도록 구성하세요.</string>
+    <string name="add_device_step1_wifi">Wi-Fi SSID：</string>
+    <string name="add_device_step1_psk">Wi-Fi PSK：</string>
+    <string name="add_device_step1_wifi_hint">Wi-Fi SSID를 입력하세요.</string>
+    <string name="add_device_step1_psk_hint">Wi-Fi PSK를 입력하세요.</string>
+    <string name="add_device_step1_ssid_error">SSID가 잘 못 되었습니다.</string>
+    <string name="add_device_next">다음</string>
+    <string name="add_device_step2_note">" 1. 자동급식수기의 간편 설정 버튼을 1 초 동안 누릅니다. 2. \"다음\"을 클릭하여 구성을 시작합니다."</string>
+    <string name="add_device_step3_text">" 곧 연결 됩니다. 기다려주세요 ..."</string>
+    <string name="add_device_failed">네트워크에 등록되지 않았습니다. 다시 구성하거나 아래 버튼을 클릭하여 AP 구성을 입력하십시오.</string>
+    <string name="add_device_failed_ap">AP 구성 등록을 입력하세요.</string>
+    <string name="add_device_failed1">네트워크 암호가 틀립니다. 다시 시도하세요.</string>
+    <string name="add_device_failed2">구성이 완료되지 않았습니다. 다시 시도하세요.</string>
+    <string name="add_device_failed3">자동급식수기를 찾지 못했습니다. 다시 시도하세요.</string>
+    <string name="add_device_success_title">자동급식수기 이름</string>
+    <string name="add_device_success_name_hint">"자동급식수기 이름 등록 "</string>
+    <string name="add_device_success_psk_hint">패스워드 입력</string>
+    <string name="add_device_success_confirm_hint">패스워드 확인</string>
+    <string name="add_device_success">설정 구성</string>
+    <string name="add_device_success_name_error">자동급식수기의 이름을 채워 주세요.</string>
+    <string name="add_device_success_psk_error">자동급식수기의 암호를 채워 주세요.</string>
+    <string name="add_device_success_confirm_error">암호는 필수 입니다.</string>
+    <string name="add_device_success_psk_different">암호가 동일하지 않습니다.</string>
+    <string name="add_device_success_show">"자동급식수기가 등록 완료 되었습니다. "</string>
+    <string name="add_device_failed_show">"자동급식수기가 등록 실패 되었습니다. "</string>
+    <string name="modify_device_success_psk_error">암호가 잘못 되었습니다.</string>
+    <string name="modify_device_success_name">자동급식수기 신규 이름:</string>
+    <string name="modify_device_success_delete">자동급식수기를 삭제하세요</string>
+    <string name="modify_device_delete_title">자동급식수기 삭제</string>
+    <string name="modify_device_delete_text">자동급식수기를 삭제 하시겠습니까?</string>
+    <string name="modify_device_delete_ok">OK</string>
+    <string name="modify_device_delete_cancel">취소</string>
+    <string name="add_device_list_name">자동급식수기 추가</string>
+    <string name="device_connect_network_error">네트워크 연결 및 자동급식수기 전원 상태를 확인하세요.</string>
+    <string name="device_connect_psk_empty">암호를 등록해 주세요.</string>
+    <string name="device_connect_psk_check_title">암호 확인</string>
+    <string name="device_connect_psk_check">암호를 확인 중입니다.</string>
+    <string name="video_name">Name:</string>
+    <string name="video_auto">자동</string>
+    <string name="video_VHD">VHD</string>
+    <string name="video_HD">HD</string>
+    <string name="video_BD">BD</string>
+    <string name="video_VHD_ok">이미 VHD 모드 입니다.</string>
+    <string name="video_HD_ok">이미 HD 모드 입니다.</string>
+    <string name="video_BD_ok">이미 BD 모드 입니다.</string>
+    <string name="video_settings_psk_hint">암호 입력</string>
+    <string name="video_settings_confirm_psk_hint">신규 암호 입력</string>
+    <string name="video_settings_btn">수정 확인</string>
+    <string name="video_set_sd_time_error">SD 카드 기록 시간 동기화에 실패하였습니다.</string>
+    <string name="video_take_photo_text">사진 저장 위치 :</string>
+    <string name="video_record_text">"동영상 저장 위치 : "</string>
+    <string name="video_settings_psk_text">암호는 필수 등록 입니다.</string>
+    <string name="video_settings_new_psk_text">신규 암호는 필수 등록 입니다.</string>
+    <string name="video_settings_new_psk_error">암호 변경 실패, 재등록 하세요.</string>
+    <string name="video_settings_new_psk_success">암호 변경이 성공하였습니다.</string>
+    <string name="device_connect_back_title">자동급식수기 연결</string>
+    <string name="device_connect_psk_hint">기본 암호 \'admin\'</string>
+    <string name="device_connect_psk">암호:</string>
+    <string name="device_connect_btn">연결</string>
+    <string name="device_connect_forget_psk">비밀번호를 잊으셨습니까?</string>
+    <string name="device_connect_one_screen">단일 화면 디스플레이</string>
+    <string name="device_connect_two_screen">화면 분할 표시</string>
+    <string name="device_connect_forget_psk_indicator">자동급식수기의 리셋 버튼을 5초 동안 누르고 있으면 초기 상태로 복원됩니다 (출하시 기본값은 admin)</string>
+    <string name="device_connectting_text">부팅 중이니 잠시 기다려주세요.</string>
+    <string name="device_modify_title">자동급식수기 정보 수정</string>
+    <string name="device_modify_name_hint">신규 이름을 입력하세요.</string>
+    <string name="device_modify_psk_hint">암호 입력</string>
+    <string name="device_modify_btn">변경</string>
+    <string name="device_modify_indicator_title">암호 변경</string>
+    <string name="device_modify_indicator_text">正在修改密码...</string>
+    <string name="device_modify_copy_text_success">자동급식수기 아이디 복사 성공</string>
+    <string name="device_modify_id_text">"자동급식수기 아이디 "</string>
+    <string name="device_delete_btn">자동급식수기 삭제</string>
+    <string name="device_connect_failed_text">연결 실패, 재시도해 주세요.</string>
+
+    <string name="exit_app">정말로 프로그램을 종료하나요?</string>
+
+    <string name="help_title">도움말</string>
+    <string name="help_url_android">http://www.pgyer.com/rakvideotest</string>
+    <string name="help_url_ios">http://www.pgyer.com/rakvideotest-ios</string>
+    <string name="help_text_0">QR 코드로 앱을 다운로드 하세요.</string>
+    <string name="help_text_1">IOS APP Download url:</string>
+    <string name="help_text_2">이 제품은 두 가지 작동 모드를 가지고 있습니다. 1.직접 연결 핫스팟 모드 2.LAN 라우팅 모드 구성 장치가 작동하려면 30 초가 걸리고 작동 표시등이 깜박입니다. 잠시 기다려주십시오. (특별 참고 사항 : 기계가 처음 사용되면 공장을 복원해야합니다. 그렇지 않으면 핫스팟을 찾을 수 없으며, \"Easyconfig\"버튼을 5 초 동안 길게 눌러 네트워크 라우팅으로 핫스팟을 전환하십시오.)</string>
+    <string name="help_text_3_title">첫째, 직접 핫스팟 모드 구성</string>
+    <string name="help_text_4_title">둘째, LAN 라우팅 모드 구성</string>
+
+    <string name="device_media_title">사진 및 비디오</string>
+    <string name="device_photo_text">사진</string>
+    <string name="device_photo_note">"저장 사진 보기 "</string>
+    <string name="device_video_text">동영상</string>
+    <string name="device_video_note">저장 동영상 보기</string>
+    <string name="photo_text">사진</string>
+    <string name="video_text">동영상</string>
+    <string name="edit_text">수정</string>
+    <string name="delete_text">삭제</string>
+    <string name="delete_photo_title_note">사진 삭제</string>
+    <string name="delete_video_title_note">동영상 삭제</string>
+    <string name="delete_photo_admin_note">사진을 삭제 하시겠습니까?</string>
+    <string name="delete_video_admin_note">동영상을 삭제 하시겠습니까?</string>
+
+    <string name="video_uart_recv_hint">"수신 데이터 영역 "</string>
+    <string name="video_uart_send_hint">"전송 데이터 영역 "</string>
+    <string name="video_uart_send_btn">전송</string>
+    <string name="video_uart_clear_btn">지우기</string>
+    <string name="video_uart_ip_error">"IP 주소 오류 "</string>
+    <string name="video_uart_connect_success">"소켓 연결 성공 "</string>
+    <string name="video_uart_connect_failed">소켓 연결 실패</string>
+    <string name="video_uart_recv_num">수신 바이트 수 :</string>
+    <string name="video_uart_send_num">"송신 바이트 수 : "</string>
+
+    <string name="permission_title_note">"권한 없음 "</string>
+    <string name="permission_admin_note">" 앱에 SD 카드를 읽고 쓸 수있는 권한이 있는지 확인하십시오."</string>
+
+    <string name="folder_title">폴더 목록</string>
+    <string name="get_folder_list">동영상 폴더 목록 가져 오는 중 ...</string>
+    <string name="video_title">동영상 파일 목록</string>
+    <string name="get_video_list">동영상 파일 목록 가져 오는 중 ...</string>
+
+
+    <string name="decoder">디코딩 :</string>
+    <string name="decoder_way">디코딩 방법 선택</string>
+    <string name="hardware_decoder">하드웨어 디코딩(SurfaceView)</string>
+    <string name="software_decoder_s">소프트웨어 디코딩(SurfaceView)</string>
+    <string name="software_decoder_t">소프트웨어 디코딩(TextureView)</string>
+
+    <string name="version">버전 정보</string>
+    <string name="set_psk">암호 수정</string>
+    <string name="set_parameter">"매개 변수 설정 "</string>
+    <string name="app_version">APP Version:</string>
+    <string name="fw_version">Module Version:</string>
+    <string name="set_video_pipe">PIPE:</string>
+    <string name="set_video_fps">FPS:</string>
+    <string name="set_video_quality">QUALITY:</string>
+    <string name="set_video_gop">GOP:</string>
+    <string name="choose_video_pipe">Choose PIPE</string>
+    <string name="device_parameter_vhd">1920X1080</string>
+    <string name="device_parameter_hd">1280X720</string>
+    <string name="device_parameter_vga">640X480</string>
+    <string name="device_parameter_l">F320X240</string>
+    <string name="set_video_fps_empty">QUALITY는 필수 입니다.</string>
+    <string name="set_video_quality_empty">FPS는 필수 입니다.</string>
+    <string name="set_video_gop_empty">GOP는 필수 입니다.</string>
+    <string name="set_video_fps_failed">FPS 설정에 실패했습니다.</string>
+    <string name="set_video_quality_failed">QUALITY 설정에 실패했습니다.</string>
+    <string name="set_video_gop_failed">GOP 설정에 실패했습니다.</string>
+    <string name="device_parameter_success">비디오 환경 이 성공적으로 설정되었습니다. 앱을 재실행하면 적용됩니다.</string>
+
+    <string name="images">%d images</string>
+    <string name="edit_photo_save">저장</string>
+    <string name="edit_photo_apply">적용</string>
+    <string name="edit_photo_tips">Chart</string>
+    <string name="edit_photo_fliter">필터</string>
+    <string name="edit_photo_crop">Crop</string>
+    <string name="edit_photo_rotate">Rotate</string>
+    <string name="edit_photo_color">Toning</string>
+    <string name="edit_photo_baohe">Saturate</string>
+    <string name="edit_photo_sexiang">Hue</string>
+    <string name="edit_photo_liangdu">휘도</string>
+
+    <string name="edit_fliter_yuanse">Primary-color</string>
+    <string name="edit_fliter_qingrou">Gentle</string>
+    <string name="edit_fliter_jingdian">고전</string>
+    <string name="edit_fliter_xuanli">화려</string>
+    <string name="edit_fliter_fugu">복고</string>
+    <string name="edit_fliter_youya">优雅</string>
+    <string name="edit_fliter_jiaopian">胶片</string>
+    <string name="edit_fliter_huiyi">回忆</string>
+    <string name="edit_fliter_youge">优格</string>
+    <string name="edit_fliter_liunian">流年</string>
+    <string name="edit_fliter_guangxuan">밝게</string>
+
+    <string name="edit_photo_processing">"이미지 처리 중 ... "</string>
+    <string name="edit_photo_loading">이미지 로드 중 ...</string>
+    <string name="edit_crop_renyi">임의로</string>
+    <string name="device_connect_type">동영상 파일 포맷</string>
+    <string name="device_connect_h264">H264 포맷</string>
+    <string name="device_connect_mjpeg">MJPEG 포맷</string>
+
+    <string name="device_sd_record1">파일 열기 오류</string>
+    <string name="device_sd_record2">기기 열기 오류</string>
+    <string name="add_device_step01_ap_text">AP 모드 설정(원격)</string>
+    <string name="add_device_step1_ap_admin_connect_note">자동급식수기를 연결 진행하고 있습니다.</string>
+    <string name="add_device_step1_net_error">Wi-Fi가 입력되지 않았습니다.</string>
+    <string name="device_modify_copy_text">자동급식수기 아이디 복사</string>
+    <string name="help_text_3_text">" 1. 부팅이 시작될 때까지 기다리십시오. WiFi가 LTH - ****** 핫스팟으로 스캔하여 연결을 클릭하십시오. 2. 모바일 응용 프로그램을 열면 재생 목록에 자동으로 모니터링 장치가 연결되며 클릭하여보고 시작하기 위해 암호를 입력하십시오. 3. 처음 재생을 클릭하면 확인을 위해 암호를 입력 한 다음 암호를 직접 열어야합니다.  참고 (기본 암호는 admin입니다. 모니터를 열 때 암호를 변경할 수 있으며 암호를 잊어 버리고 \"Easyconfig\"단추를 5 초 동안 눌러 기본값을 복원 할 수 있습니다)"</string>
+    <string name="help_text_end">개인 정보 보호를 위해 보다 안전한 비밀번호를 변경하십시오. 지역 법률을 준수하고 이 제품을 올바르게 사용하십시오!</string>
+    <string name="help_text_4_text">"1. 부팅이 시작될 때까지 기다렸다가 전화가 WiFi 라우터에 연결되어 있는지 확인한 다음 전화 앱을 열어 구성을 시작합니다. 2. 추가를 클릭 한 다음 전화가 WiFi에 연결할 네트워크 암호를 입력하고 \"다음\"을 클릭하십시오. 3. 메시지가 나타나면 \"Easyconfig\"버튼을 누르고 \"Easyconfig\"버튼을 누른 후 \"다음\"을 눌러 구성하십시오. 4. 구성이 완료되면 장치에 원하는 이름을 추가하고 마침을 클릭합니다. 5. 처음 재생을 클릭하면 확인을 위해 암호를 입력 한 다음 암호를 직접 열어야합니다. 참고 (기본 암호는 admin입니다. 모니터를 열 때 암호를 변경할 수 있으며 암호를 잊어 버리고 \"Easyconfig\"단추를 5 초 동안 눌러 기본값을 복원 할 수 있습니다) "</string>
+    <string name="edit_fliter_heibai">흑백</string>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="text_size_1">20sp</dimen>
+    <dimen name="one_divider_height">1dp</dimen>
+    <dimen name="two_divider_height">2dp</dimen>
+    <dimen name="add_title_height">20sp</dimen>
+    <dimen name="add_text_height">20sp</dimen>
+    <dimen name="add_note_height">16sp</dimen>
+    <dimen name="help_title_height">18sp</dimen>
+    <dimen name="help_text_height">16sp</dimen>
+
+    <dimen name="image_edit_text_size">16sp</dimen>
+    <dimen name="image_edit_text_padding">7dp</dimen>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="greys">#333333</color>
+    <color name="red">#FF0000</color>
+    <color name="blue">#0000FF</color>
+    <color name="grey">#999999</color>
+    <color name="dialog_blue">#2298f1</color>
+    <color name="add_title">#808080</color>
+    <color name="add_text">#737373</color>
+    <color name="add_note">#888888</color>
+    <color name="add_success">#8c8c8c</color>
+    <color name="add_background">#f2f2f2</color>
+    <color name="add_line">#cccccc</color>
+    <color name="add3_text">#2c2c2c</color>
+    <color name="add_success_text">#323232</color>
+    <color name="trans">#20000000</color>
+
+    <color name="grey_background">#E1E1E1</color>
+    <color name="menu_red">#DB4341</color>
+    <color name="menu_blue">#00A5E0</color>
+    <color name="grey_little">#999999</color>
+    <color name="grey_most">#282828</color>
+    <color name="grey_more">#3C3F41</color>
+
+    <color name="titlebar_bg_color">#69AA05</color>
+    <color name="titlebar_title_color">#FFFFFF</color>
+</resources>

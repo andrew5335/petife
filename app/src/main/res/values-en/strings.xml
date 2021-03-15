@@ -1,0 +1,261 @@
+<resources>
+    <string name="app_name">Petife</string>
+
+    <string name="rssi">%d dBm</string>
+    <string name="feed_info">%d g / %d </string>
+    <string name="water_info">%d ml / %d 회</string>
+
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <string name="birthday">%d-%d-%d / %d years old</string>
+    <string name="kind_and_weight">%s / %s kg</string>
+
+    <string name="time">%d:%d</string>
+    <string name="minute_latency">%d</string>
+    <string name="amount">%d</string>
+
+    <string name="date">%d-%d-%d</string>
+    <string name="input_message">Input message</string>
+
+    <string name="notice_wifi_connect1">Connect to %s</string>
+    <string name="notice_wifi_connect2">Proceed after connect to %s</string>
+    <string name="notice_connection_info">%s</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="set">Set</string>
+    <string name="unset">Release</string>
+
+    <!--언어별 텍스트-->
+    <string name="appTitle">Petife</string>
+    <!--1. Login-->
+    <string name="titleText">Login</string>
+    <string name="googleLogin">Google</string>
+    <string name="facebookLogin">Facebook</string>
+    <string name="snsRestrict">Only one SNS account can be allow to use in Petife.</string>
+    <!--2. Left Menu-->
+    <string name="addDevice">Add device</string>
+    <string name="petSetting">Pet Setting</string>
+    <string name="manageFriend">Manage friends</string>
+    <string name="addFriend">Add friends</string>
+    <string name="logOut">Log out</string>
+    <string name="delDevice">Delete device</string>
+    <!--3. Pet Setting-->
+    <string name="goBack">back</string>
+    <string name="petInfo">Pet info</string>
+    <string name="myPetInfo">My pet information</string>
+    <string name="enterPetInfo">Enter my pet information</string>
+    <string name="store">Store</string>
+    <string name="addPhoto">Add photo</string>
+    <string name="name">Name</string>
+    <string name="writeName">Write name.</string>
+    <string name="birth">Birth</string>
+    <string name="writeBirth">Write Birthday</string>
+    <string name="today"></string>
+    <string name="petAge">0 years old</string>
+    <string name="maleFemale">Male Female</string>
+    <string name="breed">Breed</string>
+    <string name="breedWeight">Breed/Weight</string>
+    <string name="enterBreed">Enter the breed.</string>
+    <string name="weight">2.2kg</string>
+    <string name="importPhoto">Import photo</string>
+    <!--4. Add Friend-->
+    <string name="inviteFriend">Invite friend</string>
+    <string name="cancel2">Cancel</string>
+    <string name="invite">Invite</string>
+    <string name="insertEmail">Insert the friend\'s email.</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">OK</string>
+    <string name="emailWait">E-mail Wait</string>
+    <string name="emailAccept">E-mail Accept</string>
+    <!--5. Manage Friend-->
+    <string name="control">Accept / Block / Delete / Ok</string>
+    <!--6. Add Device-->
+    <string name="petName">Petife (Pet name)</string>
+    <string name="petFemale">Female</string>
+    <string name="poodleEg">Poodle / 2.2kg</string>
+    <string name="addDevice2">Add device.</string>
+    <!--7. Add Device2-->
+    <string name="petifeSearch">Petife Search</string>
+    <string name="next">next</string>
+    <string name="connectPetife">Connect Petife</string>
+    <string name="regDevice">1. Register Petife device.</string>
+    <string name="setRouter">2. Set up the router.</string>
+    <string name="close">Close</string>
+    <string name="wifiSet">WIFI Settings</string>
+    <string name="tryPetife">Connecting to Petife.</string>
+    <string name="refresh">Refresh</string>
+    <string name="refreshScreen">If WI-FI is not found, please refresh</string>
+    <string name="password">Password</string>
+    <string name="displayPwd">Display password</string>
+    <string name="enterPwd">Enter your password.</string>
+    <string name="lastStep">This is the last step.</string>
+    <string name="setOwnPetife">Set your own Petife name.</string>
+    <string name="regComplete">Registration complete.</string>
+    <string name="conWifi">Connect</string>
+    <!--8. main-->
+    <string name="petDiary">Pet Diary</string>
+    <string name="statistics">Statistics</string>
+    <string name="camera">Camera</string>
+    <string name="feed">Feed</string>
+    <string name="water">Water</string>
+    <!--9. pet diary calendar-->
+    <string name="today2">Today</string>
+    <!--10. pet diary input-->
+    <string name="addPhoto2">Add photo/video</string>
+    <string name="title">Title</string>
+    <string name="enterTitle">Enter the title.</string>
+    <string name="instDtm">Creation Date</string>
+    <string name="content">Contents</string>
+    <string name="enterContent">Enter your contents.</string>
+    <string name="getGalleryPhoto">Get photo from gallery</string>
+    <string name="getGalleryVideo">Get video from gallery</string>
+    <string name="getAppPhoto">Get photo from app</string>
+    <string name="getAppVideo">Get video from app</string>
+    <!--11. setting-->
+    <string name="serveMode">Serving mode setting</string>
+    <string name="lockOperationKey">Lock Petife front operation key</string>
+    <string name="syncTime">Synchronize Petife time</string>
+    <string name="init">Initialize Petife</string>
+    <string name="delete">Delete Petife</string>
+    <string name="selectServeMode">Select the serving mode.</string>
+    <string name="saveServeMode">Save the serving mode.</string>
+    <string name="failServeMode">Fail to save the serving mode.</string>
+    <string name="modeSelect">Manual/Auto/Self</string>
+    <string name="lockPetife">Will you really lock the Petife\'s front opertaion key?</string>
+    <string name="setRelease">On/Off</string>
+    <string name="initPetife">Will you really initialize Petife?</string>
+    <string name="cancelOk">Cancel / Ok</string>
+    <string name="deletePetife">Will you really delete Petife?</string>
+    <!--12. manual feed-->
+    <string name="feedMode">Feed mode</string>
+    <string name="feedSetting">Feed Setting</string>
+    <string name="manualFeedSetting">Manual feed setting</string>
+    <string name="startFeed">Feeding</string>
+    <string name="feedLevel">Feed Level</string>
+    <string name="closeConfirm">Close/Confirm</string>
+    <!--13. manual water-->
+    <string name="waterMode">Water mode</string>
+    <string name="waterSetting">Water Setting</string>
+    <string name="startWater">Watering</string>
+    <string name="waterLevel">Water level</string>
+    <!--14. auto feed-->
+    <string name="feedSchedule">Feed Schedule</string>
+    <string name="timeLevel">Time/level</string>
+    <string name="addSchedule">Add schedule</string>
+    <!--15. auto water-->
+    <string name="waterSchedule">Water Schedule</string>
+    <!--16. free feed-->
+    <string name="timeInterval">Time interval</string>
+    <string name="autoFeedInterval">Autonomous feed interval</string>
+    <string name="thirtyInterval">Every 30 minutes</string>
+    <string name="save">Save</string>
+    <!--17. etc-->
+    <string name="menuHome">Home</string>
+    <string name="feedChart">Feed Chart</string>
+    <string name="setting">Setting</string>
+    <string name="currentWindow">Current Window</string>
+    <string name="complete">Complete</string>
+    <string name="sex">Sex</string>
+    <string name="weight2">Weight</string>
+    <string name="manualFeed">Manual Feed</string>
+    <string name="autoFeed">Automatic Feed</string>
+    <string name="manualWater">Manual Watering</string>
+    <string name="autoWater">Automatic Watering</string>
+    <string name="autoMode">Automatic Mode</string>
+    <string name="turnOnLamp">Turn on the lamp</string>
+    <string name="turnOffLamp">Turn off the lamp</string>
+    <string name="reqStatus">Request Status</string>
+    <string name="setTime">Set Time</string>
+    <string name="reset">Reset</string>
+    <string name="deviceName">Device Name</string>
+    <string name="hour">Hour</string>
+    <string name="minute">Minute</string>
+    <string name="second">Second</string>
+    <string name="level">Level</string>
+    <string name="reserveFeedSch">Reservation feed schedule</string>
+    <string name="addReserveSch">Add reservation schedule</string>
+    <string name="time2">Time</string>
+    <string name="ageWeight">2 years old / 3kg</string>
+    <string name="step1">1. Turn on the WI-FI and GPS of the mobile phone.</string>
+    <string name="step2">2. After selecting the SSID in the network settings of the smartphone\n&#160;&#160;&#160;&#160;Please return to the app.\n&#160;&#160;&#160;&#160;(SSID: LTH_XXXXX or PetifeXXXXXXX)</string>
+    <string name="step22">(SSID: LTH_XXXXX or PetifeXXXXXXX)</string>
+    <string name="step3">3. Enter the router (2.4Ghz) and password.</string>
+    <string name="step4">4. Select the router\n&#160;&#160;&#160;&#160;&#160; in the network settings of the smartphone and return to the app.</string>
+    <string name="step5">5. Register the device name.</string>
+    <!--string name="step2">2. In the WI-FI settings of the phone, select the pettife to connect</string>
+    <string name="step3">3. Return to the screen and click Next</string-->
+    <string name="conSsid">Connect to SSID</string>
+    <string name="step11">1. Connecting to the selected WI-FI</string>
+    <string name="step12">2. After connecting to the selected WI-FI, click the Next button at the top</string>
+    <string name="settingPetife">Setting up Petife</string>
+    <string name="regFail">Registration failed</string>
+    <string name="basicSetting">Basic setting</string>
+    <string name="deviceSetting">Device setting</string>
+    <string name="friendSetting">Friend setting</string>
+    <string name="petifeNameMode">Petife Name / Mode</string>
+    <string name="dayOfWeek">Day of the week</string>
+    <string name="date2">Date</string>
+    <string name="location">Location</string>
+    <string name="reserveFeed">Reservation feed : 360g / 2 times</string>
+    <string name="reserveWater">Reserved water supply : 240ml / 2 times</string>
+    <string name="petBirthAge">2015.02.14 (4 years old)</string>
+    <string name="manualFeed2">Manual feed</string>
+    <string name="viewMore">View more</string>
+    <string name="connect">Connect</string>
+    <string name="noFeedSet">There is no set feed/water supply</string>
+    <string name="status">Status</string>
+    <string name="email">E-mail</string>
+    <string name="signalLevel">Signal strength</string>
+    <string name="frontLockKeySave">Saved the state of the front lock key</string>
+    <string name="frontLockKeyFail">Failed to save front lock key state</string>
+    <string name="syncTimeSuccess">Time synchronization succeeded</string>
+    <string name="syncTimeFail">Time synchronization failed</string>
+    <string name="initComplete">Initialization completed</string>
+    <string name="petifeDelete">Delete Petife</string>
+    <string name="petifeDelFail">Fail to delete Petife</string>
+    <string name="saveComplete">Save settings completed</string>
+    <string name="petInfoSave">Save the pet information</string>
+    <string name="cancelComplete">Canceled</string>
+    <string name="choice">Choose</string>
+    <string name="manageReserveSche">Reservation Scheduling</string>
+    <string name="deleteReserveSche">Are you sure you want to delete this reservation?</string>
+    <string name="exceedReserveSche">No more than 5 reservations can be made</string>
+    <string name="feedSuccess">Feeding was successful</string>
+    <string name="feedFail">Feed failed</string>
+    <string name="waterSuccess">Watering was successful.</string>
+    <string name="waterFail">Watering failed.</string>
+    <string name="friendRestrict">Friends are not authorized.</string>
+    <string name="alert">Alert</string>
+    <string name="checkConnection">Check internet connection.</string>
+    <string name="delete2">Delete</string>
+    <string name="wifiSelect">Select WIFI to connect</string>
+    <string name="wifiConnect">WIFI connection</string>
+    <string name="petifeSetting">Petife settings</string>
+    <string name="manual">Manual</string>
+    <string name="reserve">Reservation</string>
+    <string name="free">Autonomy</string>
+    <string name="setting2">Settings</string>
+    <string name="release">Release</string>
+    <string name="readFailPetife">Fail to read Petife settings.</string>
+    <string name="write">Write</string>
+    <string name="modify">Modify</string>
+    <string name="settingPet">Set up your pet.</string>
+    <string name="shutdown">Turn Petife off and on</string>
+    <string name="checkGps">Enable GPS</string>
+    <string name="goGps">Go to GPS settings</string>
+    <string name="error">Error</string>
+    <string name="trylater">Try again later</string>
+    <string name="reset2">Press the reset button to reset and proceed again</string>
+    <string name="usimAlert">SIM card is missing or cannot be verified.</string>
+    <string name="tooltipSpeaker">Speaker</string>
+    <string name="tooltipMic">Mic</string>
+    <string name="tooltipRec">Recording</string>
+    <string name="tooltipCamera">Camera</string>
+    <string name="tooltipFeed">Feeding</string>
+    <string name="tooltipWater">Watering</string>
+    <string name="tooltipFlash">Light</string>
+    <string name="searchWifi">Retrieving WI-FI list.</string>
+</resources>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="kr.co.ainus.petica_api.model.type.FeedModeType" />
+
+        <variable
+            name="petica"
+            type="kr.co.ainus.petica_api.model.domain.Petica" />
+
+        <variable
+            name="feedMode"
+            type="FeedModeType" />
+
+        <variable
+            name="peticaStatus"
+            type="kr.co.ainus.petife2.model.PeticaStatus" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray"
+            android:orientation="vertical"
+            tools:context=".view.activity.PeticaSettingActivity">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="@color/transparent"
+                    android:drawableRight="@drawable/ic_arrow_next_small"
+                    android:gravity="end|center_vertical"
+                    android:paddingRight="8dp"
+                    android:theme="@style/Base.Widget.AppCompat.Button.Borderless"
+                    app:feedMode="@{feedMode}" />
+
+                <Button
+                    android:id="@+id/btn_feed_mode"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_press_gray_white"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="8dp"
+                    android:text="@string/serveMode" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="@color/transparent"
+                    android:drawableRight="@drawable/ic_arrow_next_small"
+                    android:gravity="end|center_vertical"
+                    android:paddingRight="8dp"
+                    android:text="@{peticaStatus.hasKeyLock ? @string/set : @string/unset }"
+                    android:drawableEnd="@drawable/ic_arrow_next_small"
+                    android:paddingEnd="8dp" />
+
+                <Button
+                    android:id="@+id/btn_key_lock"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_press_gray_white"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="8dp"
+                    android:text="@string/lockOperationKey" />
+
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_clock_set"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_press_gray_white"
+                    android:drawableRight="@drawable/ic_arrow_next_small"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="@string/syncTime"
+                    android:theme="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_initialization"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_press_gray_white"
+                    android:drawableRight="@drawable/ic_arrow_next_small"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="@string/init"
+                    android:theme="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_petica_remove"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_press_gray_white"
+                    android:drawableRight="@drawable/ic_arrow_next_small"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="@string/delete"
+                    android:theme="@style/Base.Widget.AppCompat.Button.Borderless" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_circle_accent"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9"
+            app:layout_constraintWidth_percent="0.2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

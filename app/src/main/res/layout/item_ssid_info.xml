@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="ssidInfo"
+            type="kr.co.ainus.petife2.model.SsidInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_ssid_info"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_list_pressed"
+            android:drawableEnd="@drawable/ic_arrow_next_small"
+            android:drawableLeft="@drawable/ic_router"
+            android:drawableRight="@drawable/ic_arrow_next_small"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/ic_router"
+            android:gravity="start|center_vertical"
+            android:hint="@string/deviceName"
+            android:text="@{ssidInfo.ssid}"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_marginRight="54dp"
+            android:id="@+id/tv_signal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="54dp"
+            android:hint="@string/signalLevel"
+            android:visibility="gone"
+            android:text="@{@string/rssi(ssidInfo.level)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/div"
+            android:gravity="start|center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

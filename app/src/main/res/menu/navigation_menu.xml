@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group_user_setting">
+
+        <item
+            android:id="@+id/action_sign_out"
+            android:title="@string/logOut" />
+
+    </group>
+
+    <group android:id="@+id/group_pet_setting">
+
+        <item
+            android:id="@+id/action_pet_setting"
+            android:title="@string/petSetting" />
+    </group>
+
+    <group android:id="@+id/group_permission_setting">
+
+        <item android:title="@string/manageFriend"
+            android:id="@+id/action_permission_request_receive"/>
+
+        <item android:title="@string/addFriend"
+            android:id="@+id/action_permission_request_send"/>
+
+    </group>
+
+
+</menu>

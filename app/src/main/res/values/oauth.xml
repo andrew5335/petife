@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    <string name="facebook_app_id">532147427191893</string>
+    <string name="fb_login_protocol_scheme">fb532147427191893</string>
+    -->
+    <string name="facebook_app_id">289595315676219</string>
+    <string name="fb_login_protocol_scheme">fb289595315676219</string>
+
+    <string name="kakao_app_key">6520c06d0b68f1a30a2d6980277802c5</string>
+</resources>

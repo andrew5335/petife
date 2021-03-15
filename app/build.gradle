@@ -1,0 +1,208 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "kr.co.ainus.petife2"
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode 36
+        versionName "1.2.3"
+        ndk.abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'mpis'
+
+        //ndk {
+        //    abiFilters "arm64-v8a", "armeabi-v7a"
+        //}
+
+        packagingOptions {
+            //exclude "lib/arm64-v8a/libwisview.sdk.so"
+            //exclude "lib/arm64-v8a/libfaad.so"
+            //exclude "lib/arm64-v8a/libmp4v2.so"
+            //exclude "lib/armeabi-v7a/libwisview.sdk.so"
+            //exclude "lib/armeabi-v7a/libfaad.so"
+            //exclude "lib/armeabi-v7a/libmp4v2.so"
+            //exclude "lib/arm64-v8a/libnabto_client_api_jni.so"
+            pickFirst 'lib/x86/libc++_shared.so'
+            pickFirst 'lib/x86_64/libc++_shared.so'
+            pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+            pickFirst 'lib/arm64-v8a/libc++_shared.so'
+
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+
+    }
+
+    buildTypes {
+//        release {
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//        debug {
+//        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+    // jni 소스 사용에 필요한 부분 시작
+    sourceSets.main {
+        //jniLibs.srcDir 'src/main/petifelibs'
+        jniLibs.srcDir 'libs'
+        //assets.srcDir 'src/main/assets'
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs', 'petifelibs'
+        }
+        maven { url 'https://kotlin.bintray.com/kotlinx/' }
+        mavenCentral()
+        jcenter()
+    }
+    // jni 소스 사용에 필요한 부분 끝
+
+    bundle {
+        density {
+            // Different APKs are generated for devices with different screen densities; true by default.
+            enableSplit true
+        }
+        abi {
+            // Different APKs are generated for devices with different CPU architectures; true by default.
+            enableSplit true
+        }
+        language {
+            // This is disabled so that the App Bundle does NOT split the APK for each language.
+            // We're gonna use the same APK for all languages.
+            enableSplit false
+        }
+    }
+
+    /**
+    splits {
+        abi {
+            enable true
+            reset()
+            include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            universalApk false
+        }
+    }
+
+    ext.abiCodes = ['x86':1, 'x86_64':2, 'armeabi-v7a':3, 'arm64-v8a':4]
+    **/
+
+}
+
+dependencies {
+
+    // android basic component
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta7'
+    testImplementation 'junit:junit:4.13-beta-2'
+    androidTestImplementation 'androidx.test:runner:1.2.0-alpha04'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha04'
+    implementation 'com.google.android.material:material:1.1.0-alpha05'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha03'
+    implementation 'me.relex:circleindicator:2.1.4'
+    implementation "com.android.support:design:28.0.0"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "com.github.skydoves:balloon:1.3.0"    // 풍선도움말용 라이브러리 추가 2021-01-16 by Andrew Kim
+
+    // fcm
+    implementation 'com.google.firebase:firebase-messaging:17.6.0'
+
+    // life cycle viewmodel
+    def lifecycle_version = '2.1.0-alpha04'
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
+    def room_version = '2.1.0-alpha04'
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+
+    implementation 'com.google.android.play:core:1.3.4'
+
+    // circle image view
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    // petica
+    implementation project(':petica_api')
+    implementation project(':peticaexcutor')
+
+    // rak
+    implementation project(':wisview.sdk')
+
+    // shared view model
+    implementation project(':shared viewmodel factory-release')
+
+    // horizontal expand calendar
+    implementation project(':horizontalexpcalendar')
+
+    // joda time, required for horizontal expand calendar
+    implementation 'net.danlew:android.joda:2.10.1.1'
+
+    // chart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
+
+    // circle indicator ( dot navigation )
+    implementation 'me.relex:circleindicator:2.1.0'
+
+    // gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    // google login
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+
+    // facebook login
+    //implementation 'com.facebook.android:facebook-login:4.41.0'
+    //implementation 'com.facebook.android:facebook-login:100.1.1'
+    implementation 'com.facebook.android:facebook-login:[5,6)'
+
+    // facebook version
+
+    // kakao login
+    implementation 'com.kakao.sdk:usermgmt:1.16.0'
+
+    //    implementation 'com.thanosfisherman.wifiutils:wifiutils:1.4.0'
+    implementation project(':wifiutils')
+
+    // progress bar
+    implementation 'com.pnikosis:materialish-progress:1.7'
+
+    implementation 'com.nabto.android:nabto-api:1.6.0'
+
+    //implementation 'com.writingminds:FFmpegAndroid:0.3.2'
+
+    implementation 'com.chinhnguyen.photoprocessing:libPhotoProcessing:1.0'
+
+    implementation 'org.videolan.android:libvlc-all:3.1.12'
+
+    implementation group: 'net.sourceforge.jaadec', name: 'jaad', version: '0.8.5'
+
+    //implementation 'nl.bravobit:android-ffmpeg:1.1.7'
+    implementation 'com.arthenica:mobile-ffmpeg-full:4.4'
+
+    implementation('io.socket:socket.io-client:1.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+}

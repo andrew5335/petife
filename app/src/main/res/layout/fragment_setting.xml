@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_standard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_list_pressed"
+                android:drawableEnd="@drawable/ic_arrow_next_small" android:drawableRight="@drawable/ic_arrow_next_small"
+                android:gravity="start|center_vertical"
+                android:padding="16dp"
+                android:text="@string/basicSetting"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/div"
+                android:gravity="start|center_vertical"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_pet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_list_pressed"
+                android:drawableEnd="@drawable/ic_arrow_next_small" android:drawableRight="@drawable/ic_arrow_next_small"
+                android:gravity="start|center_vertical"
+                android:padding="16dp"
+                android:text="@string/petSetting" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/div" />
+
+            <Button
+                android:id="@+id/btn_device"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_list_pressed"
+                android:drawableEnd="@drawable/ic_arrow_next_small" android:drawableRight="@drawable/ic_arrow_next_small"
+                android:gravity="start|center_vertical"
+                android:padding="16dp"
+                android:text="@string/deviceSetting" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/div" />
+
+            <Button
+                android:id="@+id/btn_feed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_list_pressed"
+                android:drawableEnd="@drawable/ic_arrow_next_small" android:drawableRight="@drawable/ic_arrow_next_small"
+                android:gravity="start|center_vertical"
+                android:padding="16dp"
+                android:text="@string/feedSetting" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/div" />
+
+            <Button
+                android:id="@+id/btn_friend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_list_pressed"
+                android:drawableEnd="@drawable/ic_arrow_next_small" android:drawableRight="@drawable/ic_arrow_next_small"
+                android:enabled="false"
+                android:gravity="start|center_vertical"
+                android:padding="16dp"
+                android:text="@string/friendSetting" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/div" />
+
+            <Button
+                android:id="@+id/btn_sign_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_list_pressed"
+                android:drawableEnd="@drawable/ic_arrow_next_small" android:drawableRight="@drawable/ic_arrow_next_small"
+                android:gravity="start|center_vertical"
+                android:padding="16dp"
+                android:text="@string/logOut" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/div" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</layout>

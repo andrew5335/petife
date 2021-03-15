@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/petica_android.iml" filepath="$PROJECT_DIR$/.idea/petica_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MPChartLib/petica_android.MPChartLib.iml" filepath="$PROJECT_DIR$/.idea/modules/MPChartLib/petica_android.MPChartLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/petica_android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/petica_android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/horizontalexpcalendar/petica_android.horizontalexpcalendar.iml" filepath="$PROJECT_DIR$/.idea/modules/horizontalexpcalendar/petica_android.horizontalexpcalendar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/petica_api/petica_android.petica_api.iml" filepath="$PROJECT_DIR$/.idea/modules/petica_api/petica_android.petica_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/peticaexcutor/petica_android.peticaexcutor.iml" filepath="$PROJECT_DIR$/.idea/modules/peticaexcutor/petica_android.peticaexcutor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shared viewmodel factory-release/petica_android.shared_viewmodel_factory-release.iml" filepath="$PROJECT_DIR$/.idea/modules/shared viewmodel factory-release/petica_android.shared_viewmodel_factory-release.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wifiutils/petica_android.wifiutils.iml" filepath="$PROJECT_DIR$/.idea/modules/wifiutils/petica_android.wifiutils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wisview.sdk/petica_android.wisview.sdk.iml" filepath="$PROJECT_DIR$/.idea/modules/wisview.sdk/petica_android.wisview.sdk.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,1 @@
+include ':app', ':wisview.sdk', ':shared viewmodel factory-release', ':petica_api', ':peticaexcutor', 'wifiutils', ':horizontalexpcalendar', ':MPChartLib'
