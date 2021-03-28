@@ -713,6 +713,9 @@ public class PeticaCameraActivity extends _BaseActivity implements IVLCVout.Call
                 //options.add("--aout=opensles");
                 options.add("--audio-time-stretch"); // time stretching
                 options.add("-vvv"); // verbosity
+                //options.add("--drop-late_frames");
+                options.add("--skip-frames");
+                options.add("--file-caching=1000");
                 //옵셕 적용하여 libvlc 생성
                 libvlc = new LibVLC(this, options);
 
@@ -743,10 +746,13 @@ public class PeticaCameraActivity extends _BaseActivity implements IVLCVout.Call
                 vout.attachViews();
 
                 //rtsp://admin:1soX3yJ7@127.0.0.1:45623/cam1/h264-1
-                mediaFile = "rtsp://admin:" + petica.getDevicePw() + "@" + peticaIp + ":" + randomPortVideo + "/cam1/h264-1";
+                mediaFile = "rtsp://admin:" + petica.getDevicePw() + "@" + peticaIp + ":" + randomPortVideo + "/cam1/h264";
+                Log.i(TAG, "====================remote address : " + mediaFile);
 
                 //Media m;
                 m = new Media(libvlc, Uri.parse(mediaFile));
+                m.setHWDecoderEnabled(true, true);
+                m.addOption(":network-caching=100");
                 mMediaPlayer.setMedia(m);
                 //mMediaPlayer.setAspectRatio("18:9");
                 mMediaPlayer.setScale(0);
