@@ -1,8 +1,13 @@
 package kr.co.ainus.petife2.view.fragment;
 
 import android.app.AlertDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -33,7 +38,6 @@ public class PeticaAdd3Fragment extends _BaseFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setDataBinding();
         setViewModel();
     }

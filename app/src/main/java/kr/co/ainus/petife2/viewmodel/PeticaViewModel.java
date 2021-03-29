@@ -1061,6 +1061,8 @@ public class PeticaViewModel extends ViewModel {
         hasLoadingLiveData.setValue(true);
 
         Lx520 lx520 = new Lx520(address, password);
+        lx520 = null;
+        lx520 = new Lx520(address, password);
         lx520.setOnResultListener(new Lx520.OnResultListener() {
             @Override
             public void onResult(Lx520.Response response) {

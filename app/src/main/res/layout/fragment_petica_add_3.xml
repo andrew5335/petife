@@ -43,29 +43,29 @@
             <TextView
                 android:id="@+id/tv_loading_message"
                 android:layout_width="wrap_content"
-                android:gravity="center"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="@string/settingPetife"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="@id/guide_h_2"
-                app:layout_constraintVertical_bias="0.7"
                 app:layout_constraintLeft_toLeftOf="@id/guide_v_1"
-                app:layout_constraintRight_toRightOf="@id/guide_v_2"/>
+                app:layout_constraintRight_toRightOf="@id/guide_v_2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
 
             <ProgressBar
+                style="@android:style/Widget.ProgressBar.Inverse"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                style="@android:style/Widget.ProgressBar.Inverse"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="0.5"
-                app:layout_constraintVertical_bias="0.8"
                 android:indeterminate="true"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintWidth_percent="0.5" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

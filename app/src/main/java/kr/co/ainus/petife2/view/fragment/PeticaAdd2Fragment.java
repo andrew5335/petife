@@ -1,10 +1,13 @@
 package kr.co.ainus.petife2.view.fragment;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -67,12 +70,23 @@ public class PeticaAdd2Fragment extends _BaseFragment {
                 peticaViewModel.getHasCorrectSsid().observe(this, hasCorrectSsid -> {
                     if (hasCorrectSsid == null) return;
 
-                    if (hasCorrectSsid) {
+                    WifiManager wifiManager = (WifiManager)getContext().getSystemService(Context.WIFI_SERVICE);
 
-                        Log.i(TAG, "다음 단계로 이동");
-                        peticaViewModel.getDeviceAddStepLiveData().setValue(3);
-
+                    String curSsid = wifiManager.getConnectionInfo().getSSID();
+                    if(curSsid.startsWith("LTH") && curSsid.startsWith("Petife")) {
+                        Toast.makeText(getContext(), "일반 공유기를 선택하세요.", Toast.LENGTH_LONG).show();
+                        Intent callGPSSettingIntent = new Intent(
+                                Settings.ACTION_WIFI_SETTINGS);
+                        startActivity(callGPSSettingIntent);
+                    } else if(curSsid.contains("+")) {
+                        Toast.makeText(getContext(), "LG U+ 고객센터로 연결하여 공유기 이름의 +를 제거 후 등록하세요.", Toast.LENGTH_LONG).show();
                     } else {
+
+                        if (hasCorrectSsid) {
+                            Log.i(TAG, "다음 단계로 이동");
+                            peticaViewModel.getDeviceAddStepLiveData().setValue(3);
+
+                        } else {
 
                             alertDialog = new AlertDialog.Builder(getActivity())
                                     .setTitle(getString(R.string.wifiConnect))
@@ -86,16 +100,29 @@ public class PeticaAdd2Fragment extends _BaseFragment {
                                     .setCancelable(false)
                                     .create();
 
-                        try {
+                            try {
 
-                            //alertDialog.show();
-                            peticaViewModel.getDeviceAddStepLiveData().setValue(3);
+                                wifiManager = (WifiManager) getContext().getSystemService(Context.WIFI_SERVICE);
 
-                        } catch (Exception e) {
-                            Log.e(TAG, e.getLocalizedMessage());
-                            e.printStackTrace();
+                                curSsid = wifiManager.getConnectionInfo().getSSID();
+                                if (curSsid.startsWith("LTH") && curSsid.startsWith("Petife")) {
+                                    Toast.makeText(getContext(), "일반 공유기를 선택하세요.", Toast.LENGTH_LONG).show();
+                                    Intent callGPSSettingIntent = new Intent(
+                                            Settings.ACTION_WIFI_SETTINGS);
+                                    startActivity(callGPSSettingIntent);
+                                } else if (curSsid.contains("+")) {
+                                    Toast.makeText(getContext(), "LG U+ 고객센터로 연결하여 공유기 이름의 +를 제거 후 등록하세요.", Toast.LENGTH_LONG).show();
+                                } else {
+                                    //alertDialog.show();
+                                    peticaViewModel.getDeviceAddStepLiveData().setValue(3);
+                                }
+
+                            } catch (Exception e) {
+                                Log.e(TAG, e.getLocalizedMessage());
+                                e.printStackTrace();
+                            }
+
                         }
-
                     }
                 });
 

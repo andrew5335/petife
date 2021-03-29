@@ -3,11 +3,13 @@ package kr.co.ainus.petife2.view.activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.Arrays;
 
@@ -87,6 +89,12 @@ public class PeticaAddActivity extends _BaseNavigationActivity {
 
             switch (step) {
                 case 0:
+                    dataBinding.desc001.setTypeface(null, Typeface.BOLD);
+                    dataBinding.desc002.setTypeface(null, Typeface.BOLD);
+                    dataBinding.desc003.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc004.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc005.setTypeface(null, Typeface.NORMAL);
+
                     baseNavigationBinding.tvTitle.setText("Petife");
 
                     baseNavigationBinding.btnLeft.setText(getString(R.string.cancel2));
@@ -98,16 +106,24 @@ public class PeticaAddActivity extends _BaseNavigationActivity {
 
                         String curSsid = wifiManager.getConnectionInfo().getSSID();
                         if(!curSsid.startsWith("LTH") && !curSsid.startsWith("Petife")) {
+                            Toast.makeText(getApplicationContext(), "LTH 또는 Petife로 시작하는 와이파이에 연결하세요.", Toast.LENGTH_LONG).show();
                             Intent callGPSSettingIntent = new Intent(
                                     Settings.ACTION_WIFI_SETTINGS);
                             startActivity(callGPSSettingIntent);
+                        } else {
+                            peticaViewModel.checkCurrentSsid(getApplicationContext(), false, getResources().getStringArray(R.array.petica_ssid_array));
                         }
-                        peticaViewModel.checkCurrentSsid(getApplicationContext(), false, getResources().getStringArray(R.array.petica_ssid_array));
                     });
 
                     break;
 
                 case 1:
+                    dataBinding.desc001.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc002.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc003.setTypeface(null, Typeface.BOLD);
+                    dataBinding.desc004.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc005.setTypeface(null, Typeface.NORMAL);
+
                     baseNavigationBinding.tvTitle.setText(getString(R.string.wifiSelect));
 
                     baseNavigationBinding.btnLeft.setText(getString(R.string.cancel2));
@@ -120,6 +136,12 @@ public class PeticaAddActivity extends _BaseNavigationActivity {
 
                     break;
                 case 2:
+                    dataBinding.desc001.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc002.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc003.setTypeface(null, Typeface.BOLD);
+                    dataBinding.desc004.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc005.setTypeface(null, Typeface.NORMAL);
+
                     baseNavigationBinding.tvTitle.setText(getString(R.string.wifiConnect));
 
                     baseNavigationBinding.btnLeft.setText(getString(R.string.cancel2));
@@ -134,6 +156,12 @@ public class PeticaAddActivity extends _BaseNavigationActivity {
 
                     break;
                 case 3:
+                    dataBinding.desc001.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc002.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc003.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc004.setTypeface(null, Typeface.BOLD);
+                    dataBinding.desc005.setTypeface(null, Typeface.NORMAL);
+
                     baseNavigationBinding.tvTitle.setText(getString(R.string.petifeSetting));
 
                     baseNavigationBinding.btnLeft.setVisibility(View.GONE);
@@ -143,6 +171,12 @@ public class PeticaAddActivity extends _BaseNavigationActivity {
 
 
                 case 4:
+                    dataBinding.desc001.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc002.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc003.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc004.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc005.setTypeface(null, Typeface.BOLD);
+
                     baseNavigationBinding.tvTitle.setText(getString(R.string.setOwnPetife));
 
                     baseNavigationBinding.btnLeft.setVisibility(View.GONE);

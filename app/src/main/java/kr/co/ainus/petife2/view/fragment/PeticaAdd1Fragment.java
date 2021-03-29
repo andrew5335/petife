@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -148,6 +149,7 @@ public class PeticaAdd1Fragment extends _BaseFragment {
                                 peticaViewModel.getSelectSsidInfoLiveData().setValue(ssidInfo);
                                 wifiPasswordDialog.dismiss();
 
+                                Toast.makeText(getContext(), SSID + "에 연결해주세요.", Toast.LENGTH_LONG).show();
                                 Intent callGPSSettingIntent = new Intent(
                                         Settings.ACTION_WIFI_SETTINGS);
                                 startActivity(callGPSSettingIntent);
@@ -200,6 +202,8 @@ public class PeticaAdd1Fragment extends _BaseFragment {
 
                                 peticaViewModel.getSelectSsidInfoLiveData().setValue(ssidInfo);
                                 wifiPasswordDialog.dismiss();
+
+                                Toast.makeText(getContext(), SSID + "에 연결해주세요.", Toast.LENGTH_LONG).show();
                                 Intent callGPSSettingIntent = new Intent(
                                         Settings.ACTION_WIFI_SETTINGS);
                                 startActivity(callGPSSettingIntent);
