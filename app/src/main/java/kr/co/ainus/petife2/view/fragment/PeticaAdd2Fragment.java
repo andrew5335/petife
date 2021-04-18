@@ -26,7 +26,11 @@ public class PeticaAdd2Fragment extends _BaseFragment {
     private final String NEW_PASSWORD = RandomPasswordHelper.make();
 
     private FragmentPeticaAdd2Binding dataBinding;
-    private AlertDialog alertDialog;
+    private AlertDialog alertDialog3;
+
+    private WifiManager wifiManager;
+    private String curSsid;
+    private boolean checkwifi = false;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,11 +38,76 @@ public class PeticaAdd2Fragment extends _BaseFragment {
 
         setDataBinding();
         setViewModel();
+
+        wifiManager = (WifiManager)getContext().getSystemService(Context.WIFI_SERVICE);
+        curSsid = "";
     }
 
     @Override
     public void onStart() {
         super.onStart();
+
+        if (peticaViewModel.getDeviceAddStepLiveData().getValue() == 3) {
+            curSsid = wifiManager.getConnectionInfo().getSSID();
+
+            if (curSsid.contains("LTH") || curSsid.contains(("Petife"))) {
+                peticaViewModel.getHasLoadingLiveData().setValue(false);
+                peticaViewModel.getHasSuccessPeticaListScan().setValue(null);
+                Log.e(TAG, "공유기명이 LTH/Petife로 시작함.");
+
+                if (getActivity() != null) {
+                    /**
+                    alertDialog = new AlertDialog.Builder(getActivity())
+                            .setTitle("등록 실패")
+                            .setMessage("Wifi 설정 화면에서 일반 공유기 선택 후 다시 진행해주세요.")
+                            .setPositiveButton(getString(R.string.confirm), ((dialog, which) -> {
+                                Intent callGPSSettingIntent = new Intent(
+                                        Settings.ACTION_WIFI_SETTINGS);
+                                startActivity(callGPSSettingIntent);
+                            }))
+                            .create();
+                     **/
+                    try {
+                        //alertDialog.show();
+
+                        Toast.makeText(getContext(), getString(R.string.goWifiSetting), Toast.LENGTH_SHORT).show();
+                        Intent callGPSSettingIntent = new Intent(
+                                Settings.ACTION_WIFI_SETTINGS);
+                        startActivity(callGPSSettingIntent);
+
+                    } catch (Exception e) {
+                        Log.e(TAG, e.getLocalizedMessage());
+                        e.printStackTrace();
+                    }
+                }
+            } else if (curSsid.contains("+")) {
+                peticaViewModel.getHasLoadingLiveData().setValue(false);
+                peticaViewModel.getHasSuccessPeticaListScan().setValue(null);
+                Log.e(TAG, "공유기명에 + 가 있음");
+                //Toast.makeText(getContext(), "LG U+ 고객센터에 전화하여 공유기 이름의 + 를 제거 후 등록하세요.", Toast.LENGTH_LONG).show();
+                if (getActivity() != null) {
+                    /**
+                    alertDialog = new AlertDialog.Builder(getActivity())
+                            .setTitle("등록 실패")
+                            .setMessage("초기화 후 LG U+ 고객센터에 전화하여 공유기 이름의 + 를 제거 후 등록하세요.")
+                            .setPositiveButton(getString(R.string.confirm), ((dialog, which) -> getActivity().finish()))
+                            .create();
+                     **/
+                    try {
+                        //alertDialog.show();
+
+                        Toast.makeText(getContext(), getString(R.string.afterReset), Toast.LENGTH_LONG).show();
+                        getActivity().finish();
+
+                    } catch (Exception e) {
+                        Log.e(TAG, e.getLocalizedMessage());
+                        e.printStackTrace();
+                    }
+                }
+            } else {
+                checkwifi = true;
+            }
+        }
 
         if (peticaViewModel.getDeviceAddStepLiveData().getValue() == null || peticaViewModel.getSelectSsidInfoLiveData().getValue() == null)
             return;
@@ -70,64 +139,60 @@ public class PeticaAdd2Fragment extends _BaseFragment {
                 peticaViewModel.getHasCorrectSsid().observe(this, hasCorrectSsid -> {
                     if (hasCorrectSsid == null) return;
 
-                    WifiManager wifiManager = (WifiManager)getContext().getSystemService(Context.WIFI_SERVICE);
-
-                    String curSsid = wifiManager.getConnectionInfo().getSSID();
-                    if(curSsid.startsWith("LTH") && curSsid.startsWith("Petife")) {
-                        Toast.makeText(getContext(), "일반 공유기를 선택하세요.", Toast.LENGTH_LONG).show();
-                        Intent callGPSSettingIntent = new Intent(
-                                Settings.ACTION_WIFI_SETTINGS);
-                        startActivity(callGPSSettingIntent);
-                    } else if(curSsid.contains("+")) {
-                        Toast.makeText(getContext(), "LG U+ 고객센터로 연결하여 공유기 이름의 +를 제거 후 등록하세요.", Toast.LENGTH_LONG).show();
+                    if (hasCorrectSsid) {
+                        peticaViewModel.getDeviceAddStepLiveData().setValue(3);
                     } else {
 
-                        if (hasCorrectSsid) {
-                            Log.i(TAG, "다음 단계로 이동");
-                            peticaViewModel.getDeviceAddStepLiveData().setValue(3);
-
-                        } else {
-
-                            alertDialog = new AlertDialog.Builder(getActivity())
-                                    .setTitle(getString(R.string.wifiConnect))
-                                    .setTitle(getString(R.string.notice_wifi_connect1, dataBinding.getSsidInfo().getSsid()))
-                                    .setNegativeButton(getString(R.string.cancel), null)
-                                    .setPositiveButton(getString(R.string.wifiSet), ((dialog, which) -> {
-                                        Intent callGPSSettingIntent = new Intent(
-                                                Settings.ACTION_WIFI_SETTINGS);
-                                        startActivity(callGPSSettingIntent);
-                                    }))
-                                    .setCancelable(false)
-                                    .create();
-
-                            try {
-
-                                wifiManager = (WifiManager) getContext().getSystemService(Context.WIFI_SERVICE);
-
-                                curSsid = wifiManager.getConnectionInfo().getSSID();
-                                if (curSsid.startsWith("LTH") && curSsid.startsWith("Petife")) {
-                                    Toast.makeText(getContext(), "일반 공유기를 선택하세요.", Toast.LENGTH_LONG).show();
+                        /**
+                        alertDialog = new AlertDialog.Builder(getActivity())
+                                .setTitle(getString(R.string.wifiConnect))
+                                .setTitle(getString(R.string.notice_wifi_connect1, dataBinding.getSsidInfo().getSsid()))
+                                .setNegativeButton(getString(R.string.cancel), null)
+                                .setPositiveButton(getString(R.string.wifiSet), ((dialog, which) -> {
                                     Intent callGPSSettingIntent = new Intent(
                                             Settings.ACTION_WIFI_SETTINGS);
                                     startActivity(callGPSSettingIntent);
-                                } else if (curSsid.contains("+")) {
-                                    Toast.makeText(getContext(), "LG U+ 고객센터로 연결하여 공유기 이름의 +를 제거 후 등록하세요.", Toast.LENGTH_LONG).show();
-                                } else {
-                                    //alertDialog.show();
-                                    peticaViewModel.getDeviceAddStepLiveData().setValue(3);
-                                }
+                                }))
+                                .setCancelable(false)
+                                .create();
+                         **/
 
-                            } catch (Exception e) {
-                                Log.e(TAG, e.getLocalizedMessage());
-                                e.printStackTrace();
+                        try {
+                            if(checkwifi) {
+                                alertDialog3.dismiss();
+                                peticaViewModel.getDeviceAddStepLiveData().setValue(3);
+                            } else {
+                                //alertDialog.show();
+
+                                Toast.makeText(getContext(), getString(R.string.goWifiSetting), Toast.LENGTH_SHORT).show();
+                                Intent callGPSSettingIntent = new Intent(
+                                        Settings.ACTION_WIFI_SETTINGS);
+                                startActivity(callGPSSettingIntent);
+
+                                /**
+                                alertDialog3 = new AlertDialog.Builder(getActivity())
+                                        .setTitle("공유기 연결")
+                                        .setMessage(dataBinding.getSsidInfo().getSsid() + "선택 후 다시 진행해주세요.")
+                                        .setPositiveButton(getString(R.string.confirm), ((dialog, which) -> {
+                                            Intent callGPSSettingIntent = new Intent(
+                                                    Settings.ACTION_WIFI_SETTINGS);
+                                            startActivity(callGPSSettingIntent);
+                                        }))
+                                        .create();
+
+                                alertDialog3.show();
+                                 **/
                             }
 
+                        } catch (Exception e) {
+                            Log.e(TAG, e.getLocalizedMessage());
+                            e.printStackTrace();
                         }
+
                     }
                 });
 
             } else {
-
                 peticaViewModel.getSelectSsidInfoLiveData().removeObservers(this);
                 peticaViewModel.getHasCorrectSsid().removeObservers(this);
             }

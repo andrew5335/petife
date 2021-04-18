@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.os.PatternMatcher;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -44,6 +45,8 @@ public class PeticaAdd1Fragment extends _BaseFragment {
     private FragmentPeticaAdd1Binding dataBinding;
     private SsidInfoListAdapter ssidInfoListAdapter;
     private ProgressDialog progressDialog;
+    private AlertDialog alertDialog;
+    private AlertDialog alertDialog2;
 
 
     @Override
@@ -80,7 +83,7 @@ public class PeticaAdd1Fragment extends _BaseFragment {
             @Override
             public void onClickSsidInfo(SsidInfo ssidInfo) {
 
-                //WifiManager wifiManager = (WifiManager)getContext().getSystemService(Context.WIFI_SERVICE);
+                WifiManager wifiManager = (WifiManager)getContext().getSystemService(Context.WIFI_SERVICE);
                 //wifiManager.disconnect();
                 //wifiManager.disableNetwork(wifiManager.getConnectionInfo().getNetworkId());
 
@@ -96,122 +99,158 @@ public class PeticaAdd1Fragment extends _BaseFragment {
                             TextView selectSsid = wifiPasswordDialog.findViewById(R.id.tv_ssid);
                             final String PASSWORD = passWord2.getText().toString() == null || passWord2.getText().toString().isEmpty() ? "" : passWord2.getText().toString();
                             final String SSID = selectSsid.getText().toString();
-                            ssidInfo.setSsid(SSID);
-                            ssidInfo.setPassword(PASSWORD);
-                            peticaViewModel.peticaJoinWifi("192.168.100.1", "admin", ssidInfo.getSsid(), PASSWORD);
+                            if(SSID.contains("+")) {
+                                AlertDialog alertDialog = new AlertDialog.Builder(getActivity())
+                                        .setTitle(getString(R.string.routerError))
+                                        .setMessage(getString(R.string.uPlusError))
+                                        .setPositiveButton(getString(R.string.confirm), ((dialog, which) -> getActivity().finish()))
+                                        .create();
 
-                            Log.i(TAG, "=======password : " + PASSWORD);
-                            Log.i(TAG, "=======ssid : " + ssidInfo.getSsid());
-                            Log.i(TAG, "=======ssid2 : " + SSID);
-
-                            if(Build.VERSION.SDK_INT >= 30) {
-                                /** wifi 자동연결 임시 차단 2021-02-24 by Andrew Kim
-                                WifiManager wifiManager = (WifiManager)getContext().getSystemService(Context.WIFI_SERVICE);
-                                //wifiManager.disconnect();
-                                //wifiManager.disableNetwork(wifiManager.getConnectionInfo().getNetworkId());
-                                String curSsid = wifiManager.getConnectionInfo().getSSID();
-                                WifiNetworkSpecifier wifiNetworkSpecifier2 = new WifiNetworkSpecifier.Builder()
-                                        .setSsid(curSsid)
-                                        //.setSsidPattern(new PatternMatcher(ssidInfo.getSsid(), PatternMatcher.PATTERN_PREFIX))
-                                        .setWpa2Passphrase(PASSWORD)
-                                        .build();
-
-                                NetworkRequest networkRequest2 = new NetworkRequest.Builder()
-                                        .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
-                                        .removeCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-                                        .setNetworkSpecifier(wifiNetworkSpecifier2)
-                                        .build();
-
-                                ConnectivityManager connectivityManager = (ConnectivityManager)getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-                                connectivityManager.requestNetwork(networkRequest2, networkCallback2);
-                                connectivityManager.unregisterNetworkCallback(networkCallback2);
-
-                                WifiNetworkSpecifier wifiNetworkSpecifier = new WifiNetworkSpecifier.Builder()
-                                        .setSsid(ssidInfo.getSsid())
-                                        //.setSsidPattern(new PatternMatcher(ssidInfo.getSsid(), PatternMatcher.PATTERN_PREFIX))
-                                        .setWpa2Passphrase(PASSWORD)
-                                        .build();
-
-                                NetworkRequest networkRequest = new NetworkRequest.Builder()
-                                        .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
-                                        .removeCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-                                        .setNetworkSpecifier(wifiNetworkSpecifier)
-                                        .build();
-
-                                connectivityManager.requestNetwork(networkRequest, networkCallback);
-
-                                if(networkCallback != null) {
-                                    Log.i(TAG, "========================================NETWORKCALLBACK IS NOT NULL");
-                                    //connectivityManager.unregisterNetworkCallback(networkCallback);
-                                }
-                                **/
-
-                                peticaViewModel.getSelectSsidInfoLiveData().setValue(ssidInfo);
-                                wifiPasswordDialog.dismiss();
-
-                                Toast.makeText(getContext(), SSID + "에 연결해주세요.", Toast.LENGTH_LONG).show();
-                                Intent callGPSSettingIntent = new Intent(
-                                        Settings.ACTION_WIFI_SETTINGS);
-                                startActivity(callGPSSettingIntent);
-
-                                //connectivityManager.unregisterNetworkCallback(networkCallback);
-
+                                alertDialog.show();
                             } else {
-                                /** wifi 자동연결 임시 차단 2021-02-24 by Andrew Kim
-                                WifiConfiguration conf = new WifiConfiguration();
-                                conf.SSID = "\"" + ssidInfo.getSsid() + "\"";
-                                conf.wepKeys[0] = "\"" + PASSWORD + "\"";
-                                conf.preSharedKey = "\""+ PASSWORD +"\"";
-                                conf.wepTxKeyIndex = 0;
-                                conf.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
-                                conf.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP40);
-
-                                WifiManager wifiManager = (WifiManager)getContext().getSystemService(Context.WIFI_SERVICE);
-                                wifiManager.getScanResults().get(0).frequency = 2400;
-                                int netId = wifiManager.addNetwork(conf);
-
-                                try {
-                                    //    List<WifiConfiguration> list = wifiManager.getConfiguredNetworks();
-
-                                    //for (WifiConfiguration i : list) {
-                                    Log.i(TAG, "======petife wifissid : " + conf.SSID);
-                                    //    Log.i(TAG, "======petife wifi i : " + i.networkId);
-                                    Log.i(TAG, "======petife netId : " + netId);
-                                    //    if (i.SSID != null && i.SSID.equals("\"" + ssidInfo.getSsid() + "\"")) {
-                                    wifiManager.disconnect();
-                                    wifiManager.disableNetwork(wifiManager.getConnectionInfo().getNetworkId());
-                                    try {
-                                        Thread.sleep(1000);
-                                    } catch(Exception e) {
-                                        e.printStackTrace();
-                                    }
-                                    //wifiManager.enableNetwork(i.networkId, true);
-                                    wifiManager.enableNetwork(netId, true);
-                                    wifiManager.reconnect();
-
-                                    //break;
-                                    //}
-                                    //}
-                                } catch(SecurityException e) {
-                                    e.toString();
-                                    Log.e(TAG, "======wifi error : " + e.toString());
+                                if(alertDialog != null) {
+                                    alertDialog.dismiss();
                                 }
-                                 **/
 
+                                ssidInfo.setSsid(SSID);
+                                ssidInfo.setPassword(PASSWORD);
 
+                                peticaViewModel.peticaJoinWifi("192.168.100.1", "admin", ssidInfo.getSsid(), PASSWORD);
 
-                                peticaViewModel.getSelectSsidInfoLiveData().setValue(ssidInfo);
-                                wifiPasswordDialog.dismiss();
+                                Log.i(TAG, "=======password : " + PASSWORD);
+                                Log.i(TAG, "=======ssid : " + ssidInfo.getSsid());
+                                Log.i(TAG, "=======ssid2 : " + SSID);
 
-                                Toast.makeText(getContext(), SSID + "에 연결해주세요.", Toast.LENGTH_LONG).show();
-                                Intent callGPSSettingIntent = new Intent(
-                                        Settings.ACTION_WIFI_SETTINGS);
-                                startActivity(callGPSSettingIntent);
-                            }
+                                if(Build.VERSION.SDK_INT >= 30) {
+                                    /** wifi 자동연결 임시 차단 2021-02-24 by Andrew Kim
+                                    WifiManager wifiManager = (WifiManager)getContext().getSystemService(Context.WIFI_SERVICE);
+                                    //wifiManager.disconnect();
+                                    //wifiManager.disableNetwork(wifiManager.getConnectionInfo().getNetworkId());
+                                    String curSsid = wifiManager.getConnectionInfo().getSSID();
+                                    WifiNetworkSpecifier wifiNetworkSpecifier2 = new WifiNetworkSpecifier.Builder()
+                                            .setSsid(curSsid)
+                                            //.setSsidPattern(new PatternMatcher(ssidInfo.getSsid(), PatternMatcher.PATTERN_PREFIX))
+                                            .setWpa2Passphrase(PASSWORD)
+                                            .build();
 
+                                    NetworkRequest networkRequest2 = new NetworkRequest.Builder()
+                                            .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
+                                            .removeCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                                            .setNetworkSpecifier(wifiNetworkSpecifier2)
+                                            .build();
+
+                                    ConnectivityManager connectivityManager = (ConnectivityManager)getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+                                    connectivityManager.requestNetwork(networkRequest2, networkCallback2);
+                                    connectivityManager.unregisterNetworkCallback(networkCallback2);
+
+                                    WifiNetworkSpecifier wifiNetworkSpecifier = new WifiNetworkSpecifier.Builder()
+                                            .setSsid(ssidInfo.getSsid())
+                                            //.setSsidPattern(new PatternMatcher(ssidInfo.getSsid(), PatternMatcher.PATTERN_PREFIX))
+                                            .setWpa2Passphrase(PASSWORD)
+                                            .build();
+
+                                    NetworkRequest networkRequest = new NetworkRequest.Builder()
+                                            .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
+                                            .removeCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                                            .setNetworkSpecifier(wifiNetworkSpecifier)
+                                            .build();
+
+                                    connectivityManager.requestNetwork(networkRequest, networkCallback);
+
+                                    if(networkCallback != null) {
+                                        Log.i(TAG, "========================================NETWORKCALLBACK IS NOT NULL");
+                                        //connectivityManager.unregisterNetworkCallback(networkCallback);
+                                    }
+                                    **/
+
+                                    peticaViewModel.getSelectSsidInfoLiveData().setValue(ssidInfo);
+                                    wifiPasswordDialog.dismiss();
+/**
+                                    Toast.makeText(getContext(), SSID + "에 연결해주세요.", Toast.LENGTH_LONG).show();
+                                    Intent callGPSSettingIntent = new Intent(
+                                            Settings.ACTION_WIFI_SETTINGS);
+                                    startActivity(callGPSSettingIntent);
+ **/
+                                    alertDialog2 = new AlertDialog.Builder(getActivity())
+                                            .setTitle(getString(R.string.routerConnect))
+                                            .setMessage(SSID + getString(R.string.afterConnect))
+                                            .setPositiveButton(getString(R.string.confirm), ((dialog, which) -> {
+                                                Intent callGPSSettingIntent = new Intent(
+                                                        Settings.ACTION_WIFI_SETTINGS);
+                                                startActivity(callGPSSettingIntent);
+                                            }))
+                                            .create();
+
+                                    alertDialog2.show();
+
+                                    //connectivityManager.unregisterNetworkCallback(networkCallback);
+
+                                } else {
+                                    /** wifi 자동연결 임시 차단 2021-02-24 by Andrew Kim
+                                    WifiConfiguration conf = new WifiConfiguration();
+                                    conf.SSID = "\"" + ssidInfo.getSsid() + "\"";
+                                    conf.wepKeys[0] = "\"" + PASSWORD + "\"";
+                                    conf.preSharedKey = "\""+ PASSWORD +"\"";
+                                    conf.wepTxKeyIndex = 0;
+                                    conf.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
+                                    conf.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP40);
+
+                                    WifiManager wifiManager = (WifiManager)getContext().getSystemService(Context.WIFI_SERVICE);
+                                    wifiManager.getScanResults().get(0).frequency = 2400;
+                                    int netId = wifiManager.addNetwork(conf);
+
+                                    try {
+                                        //    List<WifiConfiguration> list = wifiManager.getConfiguredNetworks();
+
+                                        //for (WifiConfiguration i : list) {
+                                        Log.i(TAG, "======petife wifissid : " + conf.SSID);
+                                        //    Log.i(TAG, "======petife wifi i : " + i.networkId);
+                                        Log.i(TAG, "======petife netId : " + netId);
+                                        //    if (i.SSID != null && i.SSID.equals("\"" + ssidInfo.getSsid() + "\"")) {
+                                        wifiManager.disconnect();
+                                        wifiManager.disableNetwork(wifiManager.getConnectionInfo().getNetworkId());
+                                        try {
+                                            Thread.sleep(1000);
+                                        } catch(Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                        //wifiManager.enableNetwork(i.networkId, true);
+                                        wifiManager.enableNetwork(netId, true);
+                                        wifiManager.reconnect();
+
+                                        //break;
+                                        //}
+                                        //}
+                                    } catch(SecurityException e) {
+                                        e.toString();
+                                        Log.e(TAG, "======wifi error : " + e.toString());
+                                    }
+                                     **/
+
+                                    peticaViewModel.getSelectSsidInfoLiveData().setValue(ssidInfo);
+                                    wifiPasswordDialog.dismiss();
+/**
+                                    Toast.makeText(getContext(), SSID + "에 연결해주세요.", Toast.LENGTH_LONG).show();
+                                    Intent callGPSSettingIntent = new Intent(
+                                            Settings.ACTION_WIFI_SETTINGS);
+                                    startActivity(callGPSSettingIntent);
+ **/
+                                    alertDialog2 = new AlertDialog.Builder(getActivity())
+                                            .setTitle(getString(R.string.routerConnect))
+                                            .setMessage(SSID + getString(R.string.afterConnect))
+                                            .setPositiveButton(getString(R.string.confirm), ((dialog, which) -> {
+                                                Intent callGPSSettingIntent = new Intent(
+                                                        Settings.ACTION_WIFI_SETTINGS);
+                                                startActivity(callGPSSettingIntent);
+                                            }))
+                                            .create();
+
+                                    alertDialog2.show();
+                                }
 
                             //peticaViewModel.getSelectSsidInfoLiveData().setValue(ssidInfo);
                             //wifiPasswordDialog.dismiss();
+                            }
                         }
                     });
 
@@ -268,7 +307,7 @@ public class PeticaAdd1Fragment extends _BaseFragment {
                     ssidInfoListAdapter.setSsidInfoList(ssidInfoList);
                     if (progressDialog != null)  {
                         try {
-                            Thread.sleep(1500);
+                            Thread.sleep(1000);
                         } catch(Exception e) {
                             e.printStackTrace();
                         }
@@ -281,10 +320,9 @@ public class PeticaAdd1Fragment extends _BaseFragment {
                     if (hasSuccessPeticaJoinWifi == null) return;
 
                     if (hasSuccessPeticaJoinWifi) {
-
+                        alertDialog2.dismiss();
                         peticaViewModel.getDeviceAddStepLiveData().setValue(2);
                         peticaViewModel.getHasSuccessPeticaJoinWifi().setValue(true);
-
                     } else {
 
                         try {

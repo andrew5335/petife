@@ -191,7 +191,7 @@
     <string name="step11">1. 선택하신 WI-FI에 연결중입니다.</string>
     <string name="step12">2. 선택하신 WI-FI에 연결된 후 상단의 다음 버튼을 눌러주세요.</string>
     <string name="settingPetife">펫티페를 설정 중입니다.</string>
-    <string name="regFail">등록 실패하였습니다</string>
+    <string name="regFail">비밀번호 오류로 등록 실패하였습니다</string>
     <string name="basicSetting">기본 설정</string>
     <string name="deviceSetting">기기 설정</string>
     <string name="friendSetting">친구 설정</string>
@@ -245,7 +245,7 @@
     <string name="settingPet">펫을 설정하세요.</string>
     <string name="shutdown">Petife 전원을 껐다 켜주세요</string>
     <string name="checkGps">GPS를 사용가능하게 설정하세요</string>
-    <string name="goGps">GPS 설정으로 이동</string>류
+    <string name="goGps">GPS 설정으로 이동</string>
     <string name="error">오류입니다.</string>
     <string name="trylater">잠시 후 다시 시도하세요</string>
     <string name="reset2">리셋 버튼을 눌러 초기화 후 다시 진행해주세요</string>
@@ -258,4 +258,11 @@
     <string name="tooltipWater">물주기</string>
     <string name="tooltipFlash">조명</string>
     <string name="searchWifi">WI-FI 목록을 받아오는 중입니다.</string>
+    <string name="routerError">공유기 오류</string>
+    <string name="uPlusError">LG U+ 공유기는 고센터에 연락하셔서 공유기 이름을 변경하세요.</string>
+    <string name="routerConnect">공유기 연결</string>
+    <string name="afterConnect">선택 후 다시 진행해주세요.</string>
+    <string name="goWifiSetting">Wifi 설정 화면에서 일반 공유기 선택 후 다시 진행해주세요.</string>
+    <string name="afterReset">초기화 후 LG U+ 고객센터에 전화하여 공유기 이름의 + 를 제거 후 등록하세요.</string>
+    <string name="tryAgain">처음부터 다시 등록해주세요.</string>
 </resources>

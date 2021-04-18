@@ -259,4 +259,11 @@
     <string name="tooltipWater">水やり</string>
     <string name="tooltipFlash">照明</string>
     <string name="searchWifi">WI-FIリストをもらってくるのです.</string>
+    <string name="routerError">ルータエラー</string>
+    <string name="uPlusError">LG U +ルータは高センターに連絡してルータの名前を変更してください</string>
+    <string name="routerConnect">ルータ接続</string>
+    <string name="afterConnect">選択した後、再進行してください</string>
+    <string name="goWifiSetting">Wifi設定画面で一般ルータを選択した後、再進行してください</string>
+    <string name="afterReset">初期化後、LG U +お客様センターに電話してルータ名の+を除去した後の登録下さい</string>
+    <string name="tryAgain">最初から再登録してください</string>
 </resources>

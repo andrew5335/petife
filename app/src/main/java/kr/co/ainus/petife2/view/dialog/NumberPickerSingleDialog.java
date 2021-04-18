@@ -39,21 +39,21 @@ public class NumberPickerSingleDialog extends _BaseDialog {
 
         switch (feedType) {
             case FEEDER:
-                dataBinding.np.setMinValue(3);
+                dataBinding.np.setMinValue(1);
                 dataBinding.np.setMaxValue(20);
                 dataBinding.np.setValue(3);
                 dataBinding.npValueText.setText("약" + dataBinding.np.getValue()*3 + "g");
                 break;
 
             case WATER:
-                dataBinding.np.setMinValue(3);
+                dataBinding.np.setMinValue(1);
                 dataBinding.np.setMaxValue(20);
                 dataBinding.np.setValue(3);
                 dataBinding.npValueText.setText("약" + dataBinding.np.getValue()*8 + "ml");
                 break;
 
             default:
-                dataBinding.np.setMinValue(3);
+                dataBinding.np.setMinValue(1);
                 dataBinding.np.setMaxValue(20);
                 dataBinding.np.setValue(3);
                 dataBinding.npValueText.setText("약" + dataBinding.np.getValue()*3 + "g");

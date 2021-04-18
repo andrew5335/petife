@@ -34,10 +34,16 @@ public class PeticaAdd3Fragment extends _BaseFragment {
 
     private FragmentPeticaAdd3Binding dataBinding;
     private AlertDialog alertDialog;
+    private WifiManager wifiManager;
+    private String curSsid;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        wifiManager = (WifiManager)getContext().getSystemService(Context.WIFI_SERVICE);
+        curSsid = "";
+
         setDataBinding();
         setViewModel();
     }
@@ -45,6 +51,66 @@ public class PeticaAdd3Fragment extends _BaseFragment {
     @Override
     public void onStart() {
         super.onStart();
+
+        /**
+        curSsid = wifiManager.getConnectionInfo().getSSID();
+
+        if(curSsid.contains("LTH") || curSsid.contains(("Petife"))) {
+            peticaViewModel.getHasLoadingLiveData().setValue(false);
+            peticaViewModel.getHasSuccessPeticaListScan().setValue(null);
+            Log.e(TAG, "공유기명이 LTH/Petife로 시작함.");
+
+            if (getActivity() != null) {
+                alertDialog = new AlertDialog.Builder(getActivity())
+                        .setTitle("등록 실패")
+                        .setMessage("Wifi 설정 화면에서 일반 공유기 선택 후 다시 진행해주세요.")
+                        .setPositiveButton(getString(R.string.confirm), ((dialog, which) -> {
+                            Intent callGPSSettingIntent = new Intent(
+                                    Settings.ACTION_WIFI_SETTINGS);
+                            startActivity(callGPSSettingIntent);
+                        }))
+                        .create();
+                try {
+                    //alertDialog.show();
+
+                    Toast.makeText(getContext(), "Wifi 설정 화면에서 일반 공유기 선택 후 다시 진행해주세요.", Toast.LENGTH_SHORT).show();
+                    Intent callGPSSettingIntent = new Intent(
+                            Settings.ACTION_WIFI_SETTINGS);
+                    startActivity(callGPSSettingIntent);
+
+                } catch (Exception e) {
+                    Log.e(TAG, e.getLocalizedMessage());
+                    e.printStackTrace();
+                }
+            }
+        } else if(curSsid.contains("+")) {
+            peticaViewModel.getHasLoadingLiveData().setValue(false);
+            peticaViewModel.getHasSuccessPeticaListScan().setValue(null);
+            Log.e(TAG, "공유기명에 + 가 있음");
+            //Toast.makeText(getContext(), "LG U+ 고객센터에 전화하여 공유기 이름의 + 를 제거 후 등록하세요.", Toast.LENGTH_LONG).show();
+            if (getActivity() != null) {
+                alertDialog = new AlertDialog.Builder(getActivity())
+                        .setTitle("등록 실패")
+                        .setMessage("초기화 후 LG U+ 고객센터에 전화하여 공유기 이름의 + 를 제거 후 등록하세요.")
+                        .setPositiveButton(getString(R.string.confirm), ((dialog, which) -> getActivity().finish()))
+                        .create();
+                try {
+                    //alertDialog.show();
+
+                    Toast.makeText(getContext(), "초기화 후 LG U+ 고객센터에 전화하여 공유기 이름의 + 를 제거 후 등록하세요.", Toast.LENGTH_LONG).show();
+                    getActivity().finish();
+                     
+                } catch (Exception e) {
+                    Log.e(TAG, e.getLocalizedMessage());
+                    e.printStackTrace();
+                }
+            }
+        } else {
+            if(alertDialog != null) {
+                alertDialog.dismiss();
+            }
+        }
+        **/
 
         if (peticaViewModel.getDeviceAddStepLiveData().getValue() == null || peticaViewModel.getSelectSsidInfoLiveData().getValue() == null)
             return;
@@ -69,9 +135,8 @@ public class PeticaAdd3Fragment extends _BaseFragment {
         peticaViewModel.getDeviceAddStepLiveData().observe(this, step -> {
 
             if (step == 3) {
-
                 peticaViewModel.getTryCount().setValue(0);
-                peticaViewModel.scanPeticaList(getActivity(), 10000);
+                peticaViewModel.scanPeticaList(getActivity(), 5000);
 
                 peticaViewModel.getHasSuccessPeticaListScan().observe(this, hasSuccessPeticaListScan -> {
 
@@ -81,50 +146,39 @@ public class PeticaAdd3Fragment extends _BaseFragment {
                     }
 
                     if (hasSuccessPeticaListScan) {
-                        peticaViewModel.getHasSuccessPeticaListScan().setValue(null);
+                            peticaViewModel.getHasSuccessPeticaListScan().setValue(null);
 
-                        Log.i(TAG, "petica scan 성공");
-                        Log.i(TAG, "petica update password 시작");
-                        final String PETICA_IP = peticaViewModel.getCurrentPeticaIpLiveData().getValue();
+                            Log.i(TAG, "petica scan 성공");
+                            Log.i(TAG, "petica update password 시작");
+                            final String PETICA_IP = peticaViewModel.getCurrentPeticaIpLiveData().getValue();
 
-                        peticaViewModel.peticaUpdatePassword(getActivity(), PETICA_IP, "admin", NEW_PASSWORD);
-                        //peticaViewModel.peticaUpdatePassword(getActivity(), PETICA_IP, "admin", "90836242ab");
-
-                    } else if (peticaViewModel.getTryCount().getValue() < 100) {
+                            peticaViewModel.peticaUpdatePassword(getActivity(), PETICA_IP, "admin", NEW_PASSWORD);
+                            //peticaViewModel.peticaUpdatePassword(getActivity(), PETICA_IP, "admin", "90836242ab");
+                    } else if (peticaViewModel.getTryCount().getValue() < 3) {
 
                         Log.i(TAG, "petica scan 재시도");
-                        peticaViewModel.scanPeticaList(getContext(), 3000);
+                        peticaViewModel.scanPeticaList(getContext(), 1000);
                         peticaViewModel.getTryCount().setValue(peticaViewModel.getTryCount().getValue() + 1);
 
                     } else {
-
                         peticaViewModel.getHasLoadingLiveData().setValue(false);
-
-                        // TODO Error Code
-
                         Log.e(TAG, "petica scan 실패");
                         peticaViewModel.getTryCount().setValue(0);
 
                         if (getActivity() != null) {
                             AlertDialog alertDialog = new AlertDialog.Builder(getActivity())
                                     .setTitle(getString(R.string.regFail))
-                                    .setMessage(getString(R.string.reset2))
+                                    .setMessage(getString(R.string.tryAgain))
                                     .setPositiveButton(getString(R.string.confirm), ((dialog, which) -> getActivity().finish()))
                                     .create();
-
                             try {
-
                                 alertDialog.show();
-
                             } catch (Exception e) {
                                 Log.e(TAG, e.getLocalizedMessage());
                                 e.printStackTrace();
                             }
-
                         }
-
                     }
-
                 });
 
                 peticaViewModel.getHasSuccessPeticaUpdatePassword().observe(this, hasSuccessPeticaUpdatePassword -> {
@@ -142,7 +196,7 @@ public class PeticaAdd3Fragment extends _BaseFragment {
 
                         Log.i(TAG, "petica add to server 시작");
                         peticaViewModel.peticaAddToServer(uuid, peticaId, peticaPassword, FeedModeType.MANUAL);
-                            //peticaViewModel.peticaAddToServer(uuid, peticaId, "90836242ab", FeedModeType.MANUAL);
+                        //peticaViewModel.peticaAddToServer(uuid, peticaId, "90836242ab", FeedModeType.MANUAL);
 
 
                     } else {

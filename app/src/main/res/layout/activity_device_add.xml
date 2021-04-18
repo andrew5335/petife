@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="30dp"
-            android:text="- LG U+ 공유기는 고객센터에 연결하여 이름을 바꾸세요."
+            android:text="- LG U+ 공유기는 고객센터에 전화하여 이름을 바꾸세요."
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:text="- LTH로 시작하는 와이파이에 연결하세요."
+            android:text="- LTH로 시작하는 와이파이에 연결하세요. (안보이면 리셋)"
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/desc_001" />

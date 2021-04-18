@@ -14,18 +14,22 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.MutableLiveData;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.demo.sdk.Scanner2;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import kr.co.ainus.peticaexcutor.Executor;
 import kr.co.ainus.petife2.R;
 import kr.co.ainus.petife2.apapter.MainViewPagerAdapter;
 import kr.co.ainus.petife2.databinding.ActivityMain2Binding;
 import kr.co.ainus.petife2.databinding.HeaderMenuBinding;
+import kr.co.ainus.petife2.util.RandomPortHelper;
 import kr.co.ainus.petife2.util.TopicHelper;
 import kr.co.ainus.petica_api.model.domain.Petica;
 import kr.co.ainus.petife2.handler.BackPressCloseHandler;
@@ -44,6 +48,12 @@ public class MainActivity extends _BaseNavigationActivity implements NavigationV
     private CircleIndicator3 mIndicator;
 
     private ViewPager2 mPager;
+
+    private int randomPortAudio = RandomPortHelper.make();
+    private int randomPortVideo = RandomPortHelper.make();
+    private int videoType = 0; // 0 h264 else mpeg
+    private String peticaIp = Executor.DEVICE_IP;
+    private boolean hasStop = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +75,7 @@ public class MainActivity extends _BaseNavigationActivity implements NavigationV
         petViewModel.loadPet(this);
         peticaViewModel.loadPeticaList(uuid);
         dataBinding.dl.closeDrawer(GravityCompat.START);
+        //onStartCheckRemote();
     }
 
     @Override
@@ -202,6 +213,7 @@ public class MainActivity extends _BaseNavigationActivity implements NavigationV
                 Log.d(TAG, "구독 topic SharePreferences 에 입력 시작");
                 TopicHelper.putBoolean(getApplicationContext(), petica.getDeviceId(), true);
                 Log.d(TAG, "구독 topic SharePreferences 에 입력 완료");
+                //onStartCheckRemote(petica.getDeviceId());
             }
 
             Set<Map.Entry<String, Boolean>> entrySet = TopicHelper.getBooleans(getApplicationContext()).entrySet();
@@ -235,5 +247,88 @@ public class MainActivity extends _BaseNavigationActivity implements NavigationV
         return false;
     }
 
+    void onStartCheckRemote(String deviceId) {
+
+        Log.i(TAG, "=====================start remote check in main activity");
+        if(null != mainViewPagerAdapter.getPeticaList() && 0 < mainViewPagerAdapter.getPeticaList().size()) {
+            peticaViewModel.openRemoteTunnelVideo(getApplicationContext(), deviceId, randomPortVideo
+                    , (id, result) -> {
+
+                        Log.i(TAG, "openRemoteTunnelVideo result = " + result);
+
+                        // TODO Nabto 에러처리 일단 블럭
+                        if (result.equals("CONNECT_TIMEOUT") ||
+                                result.equals("NTCS_CLOSED") ||
+                                result.equals("NTCS_UNKNOWN") ||
+                                result.equals("FAILED")) {
+
+                            // RemoteTunnel.closeTunnels();
+
+                            //onStopPlayVideo();
+                            //finish();
+
+                            //return;
+                        }
+
+                        Log.i(TAG, "=========start check remote result : " + result);
+                        if (result.equals("Local")) {
+                            // RemoteTunnel.closeTunnels();
+
+                            randomPortVideo = 554;
+                            randomPortAudio = 80;
+
+                            Scanner2 scanner2 = new Scanner2(getApplicationContext());
+                            scanner2.setOnScanOverListener((map, inetAddress) -> {
+
+                                Log.i(TAG, "scanner2 onresult");
+
+                                boolean hasScan = false;
+                                videoType = 2;
+
+                                for (Map.Entry<InetAddress, String> entry : map.entrySet()) {
+
+                                    if (entry.getValue().equals(mainViewPagerAdapter.getPeticaList().get(0).getDeviceId())) {
+                                        hasScan = true;
+                                        peticaIp = entry.getKey().toString().replace("/", "");
+
+                                        Log.i(TAG, "petica ip = " + peticaIp);
+                                        break;
+                                    }
+
+                                }
+
+                                if (hasStop) {
+                                    Log.e(TAG, "life cycle 이 start 가 아니어서 종료됩니다");
+                                    //onStopPlayVideo();
+                                    //return;
+                                }
+
+                                if (hasScan) {
+
+                                    //onStartPlayVideo();
+                                    //onStartPlayAudio(false);
+
+                                } else {
+
+                                    // TODO 펫티카 못찾음 처리
+                                    Log.e(TAG, "페티카 못찾음");
+
+                                }
+
+                            });
+                            scanner2.scanAll();
+
+
+                        } else if (result.equals("Remote P2P")) {
+
+                            videoType = 0;
+                            //onStartPlayVideo();
+                            //onStartPlayAudio(true);    // 2021-01-15 소리 수정
+
+                        }
+
+                    });
+        }
+    }
 }
 

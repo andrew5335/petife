@@ -3,11 +3,13 @@ package kr.co.ainus.petife2.view.activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 
@@ -94,6 +96,11 @@ public class PeticaAddActivity extends _BaseNavigationActivity {
                     dataBinding.desc003.setTypeface(null, Typeface.NORMAL);
                     dataBinding.desc004.setTypeface(null, Typeface.NORMAL);
                     dataBinding.desc005.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc001.setTextColor(Color.RED);
+                    dataBinding.desc002.setTextColor(Color.RED);
+                    dataBinding.desc003.setTextColor(Color.BLACK);
+                    dataBinding.desc004.setTextColor(Color.BLACK);
+                    dataBinding.desc005.setTextColor(Color.BLACK);
 
                     baseNavigationBinding.tvTitle.setText("Petife");
 
@@ -103,8 +110,8 @@ public class PeticaAddActivity extends _BaseNavigationActivity {
                     baseNavigationBinding.btnRight.setText(getString(R.string.next));
                     baseNavigationBinding.btnRight.setOnClickListener(v -> {
                         WifiManager wifiManager = (WifiManager)getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-
                         String curSsid = wifiManager.getConnectionInfo().getSSID();
+
                         if(!curSsid.startsWith("LTH") && !curSsid.startsWith("Petife")) {
                             Toast.makeText(getApplicationContext(), "LTH 또는 Petife로 시작하는 와이파이에 연결하세요.", Toast.LENGTH_LONG).show();
                             Intent callGPSSettingIntent = new Intent(
@@ -123,6 +130,11 @@ public class PeticaAddActivity extends _BaseNavigationActivity {
                     dataBinding.desc003.setTypeface(null, Typeface.BOLD);
                     dataBinding.desc004.setTypeface(null, Typeface.NORMAL);
                     dataBinding.desc005.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc001.setTextColor(Color.BLACK);
+                    dataBinding.desc002.setTextColor(Color.BLACK);
+                    dataBinding.desc003.setTextColor(Color.RED);
+                    dataBinding.desc004.setTextColor(Color.BLACK);
+                    dataBinding.desc005.setTextColor(Color.BLACK);
 
                     baseNavigationBinding.tvTitle.setText(getString(R.string.wifiSelect));
 
@@ -141,6 +153,11 @@ public class PeticaAddActivity extends _BaseNavigationActivity {
                     dataBinding.desc003.setTypeface(null, Typeface.BOLD);
                     dataBinding.desc004.setTypeface(null, Typeface.NORMAL);
                     dataBinding.desc005.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc001.setTextColor(Color.BLACK);
+                    dataBinding.desc002.setTextColor(Color.BLACK);
+                    dataBinding.desc003.setTextColor(Color.RED);
+                    dataBinding.desc004.setTextColor(Color.BLACK);
+                    dataBinding.desc005.setTextColor(Color.BLACK);
 
                     baseNavigationBinding.tvTitle.setText(getString(R.string.wifiConnect));
 
@@ -150,7 +167,6 @@ public class PeticaAddActivity extends _BaseNavigationActivity {
                     baseNavigationBinding.btnRight.setText(getString(R.string.next));
                     baseNavigationBinding.btnRight.setOnClickListener(v -> {
                         if (peticaViewModel.getSelectSsidInfoLiveData().getValue() == null) return;
-
                         peticaViewModel.checkCurrentSsid(getApplicationContext(), true, peticaViewModel.getSelectSsidInfoLiveData().getValue().getSsid());
                     });
 
@@ -161,6 +177,11 @@ public class PeticaAddActivity extends _BaseNavigationActivity {
                     dataBinding.desc003.setTypeface(null, Typeface.NORMAL);
                     dataBinding.desc004.setTypeface(null, Typeface.BOLD);
                     dataBinding.desc005.setTypeface(null, Typeface.NORMAL);
+                    dataBinding.desc001.setTextColor(Color.BLACK);
+                    dataBinding.desc002.setTextColor(Color.BLACK);
+                    dataBinding.desc003.setTextColor(Color.BLACK);
+                    dataBinding.desc004.setTextColor(Color.RED);
+                    dataBinding.desc005.setTextColor(Color.BLACK);
 
                     baseNavigationBinding.tvTitle.setText(getString(R.string.petifeSetting));
 
@@ -169,13 +190,17 @@ public class PeticaAddActivity extends _BaseNavigationActivity {
 
                     break;
 
-
                 case 4:
                     dataBinding.desc001.setTypeface(null, Typeface.NORMAL);
                     dataBinding.desc002.setTypeface(null, Typeface.NORMAL);
                     dataBinding.desc003.setTypeface(null, Typeface.NORMAL);
                     dataBinding.desc004.setTypeface(null, Typeface.NORMAL);
                     dataBinding.desc005.setTypeface(null, Typeface.BOLD);
+                    dataBinding.desc001.setTextColor(Color.BLACK);
+                    dataBinding.desc002.setTextColor(Color.BLACK);
+                    dataBinding.desc003.setTextColor(Color.BLACK);
+                    dataBinding.desc004.setTextColor(Color.BLACK);
+                    dataBinding.desc005.setTextColor(Color.RED);
 
                     baseNavigationBinding.tvTitle.setText(getString(R.string.setOwnPetife));
 

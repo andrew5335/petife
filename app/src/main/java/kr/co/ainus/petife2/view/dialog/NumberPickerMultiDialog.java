@@ -55,7 +55,7 @@ public class NumberPickerMultiDialog extends _BaseDialog {
         dataBinding.npMinute.setMaxValue(59);
         dataBinding.npMinute.setValue(minute);
 
-        dataBinding.npAmount.setMinValue(2);
+        dataBinding.npAmount.setMinValue(1);
         dataBinding.npAmount.setMaxValue(20);
         dataBinding.npAmount.setValue(2);
 

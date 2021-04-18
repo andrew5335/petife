@@ -258,4 +258,11 @@
     <string name="tooltipWater">Watering</string>
     <string name="tooltipFlash">Light</string>
     <string name="searchWifi">Retrieving WI-FI list.</string>
+    <string name="routerError">Router error</string>
+    <string name="uPlusError">For LG U+ routers, contact the Go Center to change the router name.</string>
+    <string name="routerConnect">Router connection</string>
+    <string name="afterConnect">Please select and proceed again.</string>
+    <string name="goWifiSetting">On the Wifi setting screen, select a common router and proceed again.</string>
+    <string name="afterReset">After initialization, call the LG U+ customer service center, remove the + from the router name, and register.</string>
+    <string name="tryAgain">Please register again from the beginning.</string>
 </resources>

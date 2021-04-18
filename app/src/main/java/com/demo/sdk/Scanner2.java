@@ -263,7 +263,7 @@ public class Scanner2 {
                     Log.e(TAG, "broadcast " + j);
                     if (Scanner2.this.datagramSocket != null) {
                         try {
-                            Thread.sleep(200);
+                            Thread.sleep(100);
 //                            Thread.sleep(500);
                         } catch (InterruptedException e) {
                             e.printStackTrace();

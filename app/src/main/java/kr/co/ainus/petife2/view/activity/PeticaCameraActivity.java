@@ -16,6 +16,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -125,6 +126,7 @@ public class PeticaCameraActivity extends _BaseActivity implements IVLCVout.Call
     private SurfaceHolder holder;
     ConstraintLayout mConstraintLayout;
     private Media m;
+    private ProgressBar progressBar;
 
     Balloon balloon;
 
@@ -144,6 +146,9 @@ public class PeticaCameraActivity extends _BaseActivity implements IVLCVout.Call
         mConstraintLayout = (ConstraintLayout) findViewById(R.id.camera_constraint_layout);
         mSurface = (SurfaceView) findViewById(R.id.video_view);
         holder = mSurface.getHolder();
+
+        progressBar = (ProgressBar) dataBinding.progressBar1;
+        progressBar.setVisibility(View.VISIBLE);
 
         mVideoWidth = getWindow().getDecorView().getWidth();
         mVideoHeight = getWindow().getDecorView().getHeight();
@@ -588,6 +593,15 @@ public class PeticaCameraActivity extends _BaseActivity implements IVLCVout.Call
                                 onStartPlayVideo();
                                 onStartPlayAudio(false);
 
+                                try {
+                                    Thread.sleep(1000);
+                                } catch(Exception e) {
+                                    e.printStackTrace();
+                                }
+                                if(progressBar.getVisibility() == View.VISIBLE) {
+                                    progressBar.setVisibility(View.INVISIBLE);
+                                }
+
                             } else {
 
                                 // TODO 펫티카 못찾음 처리
@@ -604,7 +618,14 @@ public class PeticaCameraActivity extends _BaseActivity implements IVLCVout.Call
                         videoType = 0;
                         onStartPlayVideo();
                         onStartPlayAudio(true);    // 2021-01-15 소리 수정
-
+                        try {
+                            Thread.sleep(1000);
+                        } catch(Exception e) {
+                            e.printStackTrace();
+                        }
+                        if(progressBar.getVisibility() == View.VISIBLE) {
+                            progressBar.setVisibility(View.INVISIBLE);
+                        }
                     }
 
                 });
@@ -710,12 +731,12 @@ public class PeticaCameraActivity extends _BaseActivity implements IVLCVout.Call
 
                 ArrayList<String> options = new ArrayList<String>();
                 //options.add("--subsdec-encoding <encoding>");
-                //options.add("--aout=opensles");
+                options.add("--aout=opensles");
                 options.add("--audio-time-stretch"); // time stretching
                 options.add("-vvv"); // verbosity
                 //options.add("--drop-late_frames");
-                options.add("--skip-frames");
-                options.add("--file-caching=1000");
+                //options.add("--skip-frames");
+                //options.add("--file-caching=500");
                 //옵셕 적용하여 libvlc 생성
                 libvlc = new LibVLC(this, options);
 
@@ -751,8 +772,11 @@ public class PeticaCameraActivity extends _BaseActivity implements IVLCVout.Call
 
                 //Media m;
                 m = new Media(libvlc, Uri.parse(mediaFile));
-                m.setHWDecoderEnabled(true, true);
-                m.addOption(":network-caching=100");
+                m.setHWDecoderEnabled(true, false);
+                m.addOption(":codec=mediacodec,iomx,all");
+                m.addOption(":file-caching:1500");
+                m.addOption(":network-caching=1500");
+                m.addOption(":live-caching=1500");
                 mMediaPlayer.setMedia(m);
                 //mMediaPlayer.setAspectRatio("18:9");
                 mMediaPlayer.setScale(0);

@@ -890,25 +890,9 @@ public class PeticaViewModel extends ViewModel {
                 byte[] buffer = new byte[m_in_buf_size];
                 AudioRecord audioRecord = new AudioRecord(MediaRecorder.AudioSource.VOICE_COMMUNICATION,
                         8000,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         AudioFormat.CHANNEL_IN_STEREO,
                         AudioFormat.ENCODING_PCM_16BIT,
                         m_in_buf_size);
-
 
                 audioRecord.startRecording();
 
@@ -1060,9 +1044,9 @@ public class PeticaViewModel extends ViewModel {
 
         hasLoadingLiveData.setValue(true);
 
+        //Lx520 lx520 = new Lx520(address, password);
+        //lx520 = null;
         Lx520 lx520 = new Lx520(address, password);
-        lx520 = null;
-        lx520 = new Lx520(address, password);
         lx520.setOnResultListener(new Lx520.OnResultListener() {
             @Override
             public void onResult(Lx520.Response response) {
