@@ -1,9 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.test:core:1.2.0-alpha04@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/348f64972f490a0df2262a96ef5b9f5f/jetified-core-1.2.0-alpha04/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/348f64972f490a0df2262a96ef5b9f5f/jetified-core-1.2.0-alpha04/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/348f64972f490a0df2262a96ef5b9f5f/jetified-core-1.2.0-alpha04/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/68367aeee7e6d213e294517b3b44496d/jetified-core-1.2.0-alpha04/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/68367aeee7e6d213e294517b3b44496d/jetified-core-1.2.0-alpha04/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/68367aeee7e6d213e294517b3b44496d/jetified-core-1.2.0-alpha04/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test/core/1.2.0-alpha04/c9386f5bec5134fc3ed4401a5b90efa95d2b4cd7/core-1.2.0-alpha04-javadoc.jar!/" />

@@ -39,8 +39,8 @@
       <excludeFolder url="file://$MODULE_DIR$/../../../horizontalexpcalendar/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../horizontalexpcalendar/build" />
     </content>
-    <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="library" name="Gradle: androidx.databinding:databinding-common:4.1.2" level="project" />
     <orderEntry type="library" name="Gradle: androidx.collection:collection:1.0.0" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-common:2.0.0" level="project" />

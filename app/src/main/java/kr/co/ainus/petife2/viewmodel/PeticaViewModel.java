@@ -414,6 +414,48 @@ public class PeticaViewModel extends ViewModel {
         ApiHelper.deviceAdd(request, successHandler, failureHandler, completeHandler);
     }
 
+    public void peticaUpdateToServer2(String uuid, String deviceId, String deviceName, FeedModeType feedModeType, FeedModeType feedModeType2) {
+        // hasLoadingLiveData.setValue(true);
+
+        DeviceRequest request = new DeviceRequest();
+        request.setUuid(uuid);
+        request.setDeviceId(deviceId);
+        request.setDeviceName(deviceName);
+        request.setFeedMode(feedModeType);
+        request.setFeedMode2(feedModeType2);
+
+        ApiHelper.deviceUpdate(request, new ApiHelper.SuccessHandler() {
+            @Override
+            public <V> void onSuccess(V response) {
+
+                hasSuccessPeticaUpdateToServer.setValue(true);
+                Log.i(TAG, GsonHelper.getGson().toJson(request));
+                Log.i(TAG, GsonHelper.getGson().toJson(response));
+
+                if (response instanceof DeviceResponse) {
+
+                }
+
+            }
+        }, new ApiHelper.FailureHandler() {
+            @Override
+            public void onFailure(Throwable t) {
+
+                hasSuccessPeticaUpdateToServer.setValue(false);
+                Log.e(TAG, t.getLocalizedMessage());
+                t.printStackTrace();
+
+            }
+        }, new ApiHelper.CompleteHandler() {
+            @Override
+            public void onComplete() {
+                // hasLoadingLiveData.setValue(false);
+
+            }
+        });
+
+    }
+
     public void peticaUpdateToServer(String uuid, String deviceId, String deviceName, FeedModeType feedModeType) {
         // hasLoadingLiveData.setValue(true);
 
@@ -681,6 +723,28 @@ public class PeticaViewModel extends ViewModel {
         onExecutePetica(ip, port, packet, successCallback, failCallback, completeCallback, sendCallback, receiveCallback);
     }
 
+    public void onExecutePeticaWaterFree(String ip, int port, int latency, int amount
+            , SuccessCallback successCallback
+            , FailCallback failCallback
+            , CompleteCallback completeCallback
+            , SendCallback sendCallback
+            , ReceiveCallback receiveCallback
+    ) {
+
+        Packet packet = new Packet();
+        packet.onMake(new Protocol10Byte(
+                        CommandType.WATER_FREE
+                        , ModeType.FREE
+                        , DataType.OFF
+                        , (byte) 0
+                        , (byte) latency
+                        , (byte) amount
+                )
+        );
+
+        onExecutePetica(ip, port, packet, successCallback, failCallback, completeCallback, sendCallback, receiveCallback);
+    }
+
     public void onExecutePeticaFeedModeSelect(String ip, int port, ModeType modeType
             , SuccessCallback successCallback
             , FailCallback failCallback
@@ -692,6 +756,28 @@ public class PeticaViewModel extends ViewModel {
         Packet packet = new Packet();
         packet.onMake(new Protocol10Byte(
                         CommandType.MODE
+                        , modeType
+                        , DataType.OFF
+                        , (byte) 0
+                        , (byte) 20
+                        , (byte) 20
+                )
+        );
+
+        onExecutePetica(ip, port, packet, successCallback, failCallback, completeCallback, sendCallback, receiveCallback);
+    }
+
+    public void onExecutePeticaWaterModeSelect(String ip, int port, ModeType modeType
+            , SuccessCallback successCallback
+            , FailCallback failCallback
+            , CompleteCallback completeCallback
+            , SendCallback sendCallback
+            , ReceiveCallback receiveCallback
+    ) {
+
+        Packet packet = new Packet();
+        packet.onMake(new Protocol10Byte(
+                        CommandType.WATER_FREE
                         , modeType
                         , DataType.OFF
                         , (byte) 0
@@ -1072,6 +1158,16 @@ public class PeticaViewModel extends ViewModel {
 
                         List<SsidInfo> list2 = new ArrayList<SsidInfo>();
                         list2 = new ArrayList<SsidInfo>(tmpList);
+
+                        for(int j = 0; j < list2.size(); j++) {
+                            String ssid = "";
+                            ssid = list2.get(j).getSsid();
+                            if(ssid.contains("+")) {
+                                ssid = ssid + "- 선택불가 : 고객센터로 연락해 공유기명을 바꾸세요.";
+                                list2.get(j).setSsid(ssid);
+                            }
+                        }
+
                         ssidInfoListLiveData.setValue(list2);
 
                         /**

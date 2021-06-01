@@ -6,10 +6,10 @@ android {
 
     defaultConfig {
         applicationId "kr.co.ainus.petife2"
-        minSdkVersion 24
+        minSdkVersion 28
         targetSdkVersion 30
-        versionCode 42
-        versionName "1.2.9"
+        versionCode 48
+        versionName "1.3.5"
         ndk.abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'mpis'
 
         //ndk {
@@ -136,7 +136,7 @@ dependencies {
     annotationProcessor "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-rxjava2:$room_version"
 
-    implementation 'com.google.android.play:core:1.3.4'
+    implementation 'com.google.android.play:core:1.10.0'
 
     // circle image view
     implementation 'de.hdodenhof:circleimageview:3.0.0'
@@ -204,5 +204,8 @@ dependencies {
     implementation('io.socket:socket.io-client:1.0.0') {
         exclude group: 'org.json', module: 'json'
     }
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'
+
 
 }

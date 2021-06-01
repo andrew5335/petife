@@ -1,6 +1,7 @@
 package kr.co.ainus.petife2.viewmodel;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import java.util.ArrayList;

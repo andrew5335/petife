@@ -12,6 +12,7 @@ public class Petica {
     private String deviceName;
     private String devicePw;
     private FeedModeType feedMode;
+    private FeedModeType feedMode2;
     private Timestamp timestamp;
 
     public long getIdx() {
@@ -61,6 +62,10 @@ public class Petica {
     public void setFeedMode(FeedModeType feedMode) {
         this.feedMode = feedMode;
     }
+
+    public FeedModeType getFeedMode2() { return feedMode2; }
+
+    public void setFeedMode2(FeedModeType feedMode2) { this.feedMode2 = feedMode2; }
 
     public Timestamp getTimestamp() {
         return timestamp;

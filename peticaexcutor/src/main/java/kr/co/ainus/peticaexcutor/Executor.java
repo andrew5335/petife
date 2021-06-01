@@ -97,13 +97,13 @@ public class Executor {
                     dataOutputStream.write(BYTES);
                     dataOutputStream.flush();
 
-                    Log.i(TAG, "request 시작");
-                    Log.i(TAG, "0x01, 0x55 제외 출력");
-                    Log.e(TAG, "==================response : " + Arrays.toString(BYTES));
+                    Log.i(TAG, "version request 시작");
+                    Log.i(TAG, "version 0x01, 0x55 제외 출력");
+                    Log.e(TAG, "==================executor version request : " + Arrays.toString(BYTES));
                     for (int i = 2; i < BYTES.length; i++) {
-                        Log.i(TAG, "value = " + BYTES[i]);
+                        Log.i(TAG, "executor version request value = " + BYTES[i]);
                     }
-                    Log.i(TAG, "request 끝");
+                    Log.i(TAG, "version request 끝");
 
                     if (SEND_CALLBACK != null) SEND_CALLBACK.onSend();
 
@@ -115,13 +115,13 @@ public class Executor {
                     // 버퍼에 담긴 리스폰스를 보기편한 형태로 변환 후 반환
                     System.arraycopy(buffer, 0, response, 0, response.length);
 
-                    Log.i(TAG, "response 시작");
-                    Log.i(TAG, "0x01, 0x55 제외 출력");
-                    Log.e(TAG, "==================response : " + Arrays.toString(response));
+                    Log.i(TAG, "executor version response 시작");
+                    Log.i(TAG, "executor version 0x01, 0x55 제외 출력");
+                    Log.e(TAG, "==================executor version response : " + Arrays.toString(response));
                     for (int i = 2; i < response.length; i++) {
-                        Log.i(TAG, "value = " + response[i]);
+                        Log.i(TAG, "executor version response value = " + response[i]);
                     }
-                    Log.i(TAG, "response 끝");
+                    Log.i(TAG, "executor version response 끝");
 
                     if (RECEIVE_CALLBACK != null) {
                         RECEIVE_CALLBACK.onReceive(response);

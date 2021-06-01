@@ -52,6 +52,7 @@ public class PeticaAdd4Fragment extends _BaseFragment {
                     , peticaViewModel.getCurrentPeticaIdLiveData().getValue()
                     , dataBinding.etDeviceName.getText().toString()
                     , FeedModeType.MANUAL
+
             );
         });
 

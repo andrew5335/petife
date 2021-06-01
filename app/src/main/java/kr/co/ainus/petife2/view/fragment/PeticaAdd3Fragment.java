@@ -154,7 +154,7 @@ public class PeticaAdd3Fragment extends _BaseFragment {
 
                             peticaViewModel.peticaUpdatePassword(getActivity(), PETICA_IP, "admin", NEW_PASSWORD);
                             //peticaViewModel.peticaUpdatePassword(getActivity(), PETICA_IP, "admin", "90836242ab");
-                    } else if (peticaViewModel.getTryCount().getValue() < 3) {
+                    } else if (peticaViewModel.getTryCount().getValue() < 10) {
 
                         Log.i(TAG, "petica scan 재시도");
                         peticaViewModel.scanPeticaList(getContext(), 1000);

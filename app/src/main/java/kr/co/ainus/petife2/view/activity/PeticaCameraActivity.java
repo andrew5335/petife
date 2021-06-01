@@ -731,15 +731,14 @@ public class PeticaCameraActivity extends _BaseActivity implements IVLCVout.Call
 
                 ArrayList<String> options = new ArrayList<String>();
                 //options.add("--subsdec-encoding <encoding>");
-                options.add("--aout=opensles");
+                //options.add("--aout=opensles");
                 options.add("--audio-time-stretch"); // time stretching
                 options.add("-vvv"); // verbosity
                 //options.add("--drop-late_frames");
-                //options.add("--skip-frames");
+                options.add("--skip-frames");
                 //options.add("--file-caching=500");
                 //옵셕 적용하여 libvlc 생성
                 libvlc = new LibVLC(this, options);
-
 
                 // 화면 자동을 꺼지는 것 방지
                 holder.setKeepScreenOn(true);
@@ -759,6 +758,7 @@ public class PeticaCameraActivity extends _BaseActivity implements IVLCVout.Call
 
                 vout.setVideoView(mSurface);
                 vout.setWindowSize(videoParams.width, videoParams.height);
+                vout.addCallback(this);
                 //vout.setWindowSize(3200, 1440);
 
                 //콜백 함수 등록
@@ -777,6 +777,15 @@ public class PeticaCameraActivity extends _BaseActivity implements IVLCVout.Call
                 m.addOption(":file-caching:1500");
                 m.addOption(":network-caching=1500");
                 m.addOption(":live-caching=1500");
+                m.addOption(":no-mediacodec-dr");
+                m.addOption(":no-omxil-dr");
+                m.addOption(":sout-mux-caching=10");
+                m.addOption(":rtsp-mcast");
+                m.addOption(":rtsp-caching=1500");
+                //m.addOption(":sout=#transcode{vcodec=mp4v,vb=800,fps=30,scale=0.25,acodec=none}");
+                m.addOption("rtp{sdp=rtsp://:8554/");
+                m.addOption(":sout-keep");
+
                 mMediaPlayer.setMedia(m);
                 //mMediaPlayer.setAspectRatio("18:9");
                 mMediaPlayer.setScale(0);

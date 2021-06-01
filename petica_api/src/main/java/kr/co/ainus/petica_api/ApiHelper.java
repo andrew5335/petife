@@ -203,6 +203,7 @@ public class ApiHelper {
                 , request.getDeviceName()
                 , request.getDevicePw()
                 , request.getFeedMode()
+                , request.getFeedMode2()
         ).enqueue(new Callback<DeviceResponse>() {
 
             @Override
@@ -233,6 +234,7 @@ public class ApiHelper {
                 , request.getDeviceId()
                 , request.getDeviceName()
                 , request.getFeedMode()
+                , request.getFeedMode2()
         ).enqueue(new Callback<DeviceResponse>() {
 
             @Override

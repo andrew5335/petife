@@ -42,7 +42,8 @@ public interface DeviceApi {
             , @Field("deviceId") String deviceId
             , @Field("deviceName") String deviceName
             , @Field("devicePw") String devicePw
-            , @Field("feedMode") FeedModeType feedMode);
+            , @Field("feedMode") FeedModeType feedMode
+            , @Field("feedMode2") FeedModeType feedMode2);
 
     @FormUrlEncoded
     @POST("device/update")
@@ -50,7 +51,8 @@ public interface DeviceApi {
             @Field("uuid") String uuid
             , @Field("deviceId") String deviceId
             , @Field("deviceName") String deviceName
-            , @Field("feedMode") FeedModeType feedMode);
+            , @Field("feedMode") FeedModeType feedMode
+            , @Field("feedMode2") FeedModeType feedMode2);
 
     @FormUrlEncoded
     @POST("device/remove")

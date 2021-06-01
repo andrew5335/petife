@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.skydoves:balloon:1.3.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a24ccc8fe6a9db1b0b011b254f5c4ac5/jetified-balloon-1.3.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a24ccc8fe6a9db1b0b011b254f5c4ac5/jetified-balloon-1.3.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a24ccc8fe6a9db1b0b011b254f5c4ac5/jetified-balloon-1.3.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dc5394792cf3f2b2263a4f327d7c5712/jetified-balloon-1.3.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dc5394792cf3f2b2263a4f327d7c5712/jetified-balloon-1.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dc5394792cf3f2b2263a4f327d7c5712/jetified-balloon-1.3.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.skydoves/balloon/1.3.0/e4160beb70644b657959eccae94f5a2a8d013a76/balloon-1.3.0-javadoc.jar!/" />

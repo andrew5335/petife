@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.chinhnguyen.photoprocessing:libPhotoProcessing:1.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dc20ab3dd368d1b6b5ce71b5879eb4ca/jetified-libPhotoProcessing-1.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dc20ab3dd368d1b6b5ce71b5879eb4ca/jetified-libPhotoProcessing-1.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dc20ab3dd368d1b6b5ce71b5879eb4ca/jetified-libPhotoProcessing-1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44d2b08e134a9961a7f2f5cb604391ba/jetified-libPhotoProcessing-1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44d2b08e134a9961a7f2f5cb604391ba/jetified-libPhotoProcessing-1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44d2b08e134a9961a7f2f5cb604391ba/jetified-libPhotoProcessing-1.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -131,7 +131,7 @@
     <string name="deletePetife">정말 삭제할까요?</string>
     <!--12. manual feed-->
     <string name="feedMode">급식모드</string>
-    <string name="feedSetting">급식 설정</string>
+    <string name="feedSetting">급식설정</string>
     <string name="manualFeedSetting">수동 급식 설정</string>
     <string name="startFeed">급식하기</string>
     <string name="feedLevel">급식 수준</string>
@@ -265,4 +265,9 @@
     <string name="goWifiSetting">Wifi 설정 화면에서 일반 공유기 선택 후 다시 진행해주세요.</string>
     <string name="afterReset">초기화 후 LG U+ 고객센터에 전화하여 공유기 이름의 + 를 제거 후 등록하세요.</string>
     <string name="tryAgain">처음부터 다시 등록해주세요.</string>
+    <string name="deviceAdd001">- LG U+ 공유기는 고객센터에 전화하여 이름을 바꾸세요.</string>
+    <string name="deviceAdd002">- LTH로 시작하는 와이파이에 연결하세요. (안보이면 리셋)</string>
+    <string name="deviceAdd003">- 공유기의 이름과 패스워드를 입력하세요.</string>
+    <string name="deviceAdd004">- 가정의 와이파이에 연결하세요.</string>
+    <string name="deviceAdd005">- 기기 이름을 등록하세요.</string>
 </resources>

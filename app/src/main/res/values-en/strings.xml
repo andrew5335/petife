@@ -265,4 +265,9 @@
     <string name="goWifiSetting">On the Wifi setting screen, select a common router and proceed again.</string>
     <string name="afterReset">After initialization, call the LG U+ customer service center, remove the + from the router name, and register.</string>
     <string name="tryAgain">Please register again from the beginning.</string>
+    <string name="deviceAdd001">- Change the name of the LG U+ router by\n&#160;&#160;&#160;&#160;calling the customer service center.</string>
+    <string name="deviceAdd002">- Connect to Wi-Fi starting with LTH. (Reset if invisible)</string>
+    <string name="deviceAdd003">- Enter the router name and password.</string>
+    <string name="deviceAdd004">- Connect to your home Wi-Fi.</string>
+    <string name="deviceAdd005">- Register the device name.</string>
 </resources>

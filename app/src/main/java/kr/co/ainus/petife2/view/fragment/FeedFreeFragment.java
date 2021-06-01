@@ -10,11 +10,15 @@ import com.nabto.api.RemoteTunnel;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
+
+import java.util.Arrays;
+
+import kr.co.ainus.peticaexcutor.callback.ReceiveCallback;
 import kr.co.ainus.petife2.R;
 import kr.co.ainus.petife2.databinding.FragmentFeedFreeBinding;
 import kr.co.ainus.petife2.util.RandomPortHelper;
 import kr.co.ainus.petife2.util.SharedPreferencesHelper;
-import kr.co.ainus.petife2.view.dialog.NumberPickerSingleDialog;
+import kr.co.ainus.petife2.view.dialog.NumberPickerSingleDialog2;
 import kr.co.ainus.petica_api.model.domain.Petica;
 import kr.co.ainus.petica_api.model.type.FeedType;
 import kr.co.ainus.peticaexcutor.callback.FailCallback;
@@ -26,9 +30,13 @@ public class FeedFreeFragment extends _BaseFragment {
     private static Petica petica;
     private static FeedType feedType;
 
+    private static final String SUFFIX_WATER_FREE_LATENCY = "_water_free_laency";
+
     private FragmentFeedFreeBinding dataBinding;
     private String peticaId;
     private int randomPortAudio = RandomPortHelper.make();
+
+    private int petifeVersion = 0;
 
     public static FeedFreeFragment newInstance(Petica petica, FeedType feedType) {
         FeedFreeFragment.petica = petica;
@@ -43,6 +51,24 @@ public class FeedFreeFragment extends _BaseFragment {
 
         setDataBinding();
         setViewModel();
+
+        // petife version 확인 처리 추가 2021-05-28 by Andrew Kim
+        peticaViewModel.onExecutePeticaVersionRequest("127.0.0.1", randomPortAudio
+                , null
+                , null
+                , null
+                , null
+                , new ReceiveCallback() {
+                    @Override
+                    public void onReceive(byte[] peticaResponse) {
+                        String result = Arrays.toString(peticaResponse);
+                        String version = String.valueOf(peticaResponse[7]);
+                        Log.e(TAG, "=========================version response : " + result);
+                        Log.e(TAG, "=========================version info : " + version);
+
+                        petifeVersion = Integer.parseInt(version);
+                    }
+                });
     }
 
     @Override
@@ -61,10 +87,11 @@ public class FeedFreeFragment extends _BaseFragment {
             dataBinding.tvLatency.setText(String.valueOf(feedFreeLatency));
             dataBinding.btnFeedLatency.setOnClickListener(v -> {
 
-                NumberPickerSingleDialog numberPickerSingleDialog = new NumberPickerSingleDialog(getActivity(), FeedType.ALL);
-                numberPickerSingleDialog.setOnConfirmClickListner(new NumberPickerSingleDialog.OnClickListener() {
+                Log.e(TAG, "=====petife version2 : " + petifeVersion);
+                NumberPickerSingleDialog2 numberPickerSingleDialog = new NumberPickerSingleDialog2(getActivity(), FeedType.ALL);
+                numberPickerSingleDialog.setOnConfirmClickListner(new NumberPickerSingleDialog2.OnClickListener() {
                     @Override
-                    public void onClick(NumberPickerSingleDialog numberPickerSingleDialog, int selectValue) {
+                    public void onClick(NumberPickerSingleDialog2 numberPickerSingleDialog, int selectValue) {
                         dataBinding.setMinute(selectValue);
                     }
                 });
@@ -107,9 +134,21 @@ public class FeedFreeFragment extends _BaseFragment {
             }
         });
 
-        feedViewModel.getFeedFreeLatencyLiveData().observe(this, feedFreeLatency -> {
-            dataBinding.setMinute(feedFreeLatency);
-        });
+        // petife version이 110 이상이면서 급수모드라면 sharedpreference에 저장해둔 값 사
+        if(petifeVersion >= 110 && feedType == FeedType.WATER) {
+            int waterLatency = 0;
+            waterLatency = SharedPreferencesHelper.getInt(getContext(), peticaId + SUFFIX_WATER_FREE_LATENCY);
+            if (waterLatency > 0) {
+                dataBinding.setMinute(waterLatency);
+            } else {
+                dataBinding.setMinute(10);
+            }
+
+        } else {
+            feedViewModel.getFeedFreeLatencyLiveData().observe(this, feedFreeLatency -> {
+                dataBinding.setMinute(feedFreeLatency);
+            });
+        }
     }
 
     @Override
@@ -130,31 +169,63 @@ public class FeedFreeFragment extends _BaseFragment {
 
     private void save(Context context, String peticaId, int latency) {
 
-        peticaViewModel.onExecutePeticaFeedFeederFree("127.0.0.1"
-                , randomPortAudio
-                , latency
-                , 10
-                , new SuccessCallback() {
-                    @Override
-                    public void onSuccess() {
-                        if (getActivity() != null && getActivity().getPackageName() != null) {
-                            ((Activity) getActivity()).runOnUiThread(() -> {
-                                Toast.makeText(getActivity(), "저장에 성공하였습니다", Toast.LENGTH_SHORT).show();
-                            });
+        Log.e(TAG, "=====petife version3 : " + petifeVersion);
+        // petife version이 110 이상이면서 급수 모드라면 신규 프로토콜 호출
+        if(petifeVersion >= 110 && feedType == FeedType.WATER) {
+            Log.e(TAG, "===== version new protocol");
+            peticaViewModel.onExecutePeticaWaterFree("127.0.0.1"
+                    , randomPortAudio
+                    , latency
+                    , 2
+                    , new SuccessCallback() {
+                        @Override
+                        public void onSuccess() {
+                            if (getActivity() != null && getActivity().getPackageName() != null) {
+                                ((Activity) getActivity()).runOnUiThread(() -> {
+                                    Toast.makeText(getActivity(), "저장에 성공하였습니다", Toast.LENGTH_SHORT).show();
+                                });
+                            }
                         }
-                    }
-                }, new FailCallback() {
-                    @Override
-                    public void onFail() {
-                        if (getActivity() != null && getActivity().getPackageName() != null) {
-                            ((Activity) getActivity()).runOnUiThread(() -> {
-                                Toast.makeText(getActivity(), "저장에 실패하였습니다", Toast.LENGTH_SHORT).show();
-                            });
+                    }, new FailCallback() {
+                        @Override
+                        public void onFail() {
+                            if (getActivity() != null && getActivity().getPackageName() != null) {
+                                ((Activity) getActivity()).runOnUiThread(() -> {
+                                    Toast.makeText(getActivity(), "저장에 실패하였습니다", Toast.LENGTH_SHORT).show();
+                                });
+                            }
                         }
-                    }
-                }, null, null, null);
+                    }, null, null, null);
 
-        feedViewModel.saveFeedFreeLatencyPrefences(context, peticaId, latency);
+            SharedPreferencesHelper.putInt(getContext(), peticaId + SUFFIX_WATER_FREE_LATENCY, latency);
+        } else {
+            Log.e(TAG, "===== version old protocol");
+            peticaViewModel.onExecutePeticaFeedFeederFree("127.0.0.1"
+                    , randomPortAudio
+                    , latency
+                    , 10
+                    , new SuccessCallback() {
+                        @Override
+                        public void onSuccess() {
+                            if (getActivity() != null && getActivity().getPackageName() != null) {
+                                ((Activity) getActivity()).runOnUiThread(() -> {
+                                    Toast.makeText(getActivity(), "저장에 성공하였습니다", Toast.LENGTH_SHORT).show();
+                                });
+                            }
+                        }
+                    }, new FailCallback() {
+                        @Override
+                        public void onFail() {
+                            if (getActivity() != null && getActivity().getPackageName() != null) {
+                                ((Activity) getActivity()).runOnUiThread(() -> {
+                                    Toast.makeText(getActivity(), "저장에 실패하였습니다", Toast.LENGTH_SHORT).show();
+                                });
+                            }
+                        }
+                    }, null, null, null);
+
+            feedViewModel.saveFeedFreeLatencyPrefences(context, peticaId, latency);
+        }
     }
 
     private void load(Context context, String peticaId) {

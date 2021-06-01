@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.kakao.sdk:common:1.16.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/683ff07512548e484a7a22afc143750e/jetified-common-1.16.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/683ff07512548e484a7a22afc143750e/jetified-common-1.16.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/683ff07512548e484a7a22afc143750e/jetified-common-1.16.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a36b2eb924eef45acba4e00b38e3fc24/jetified-common-1.16.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a36b2eb924eef45acba4e00b38e3fc24/jetified-common-1.16.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a36b2eb924eef45acba4e00b38e3fc24/jetified-common-1.16.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

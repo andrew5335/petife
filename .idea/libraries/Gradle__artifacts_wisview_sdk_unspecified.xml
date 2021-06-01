@@ -1,9 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: artifacts:wisview.sdk:unspecified">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/wisview.sdk/build/.transforms/78f3cdd6ca0a0cd84e395d3647ba8a89/jetified-wisview.sdk/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/wisview.sdk/build/.transforms/78f3cdd6ca0a0cd84e395d3647ba8a89/jetified-wisview.sdk/res" />
-      <root url="file://$PROJECT_DIR$/wisview.sdk/build/.transforms/78f3cdd6ca0a0cd84e395d3647ba8a89/jetified-wisview.sdk/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/wisview.sdk/build/.transforms/0248237e99b8efa71a1d69184d666ea6/jetified-wisview.sdk/res" />
+      <root url="jar://$PROJECT_DIR$/wisview.sdk/build/.transforms/0248237e99b8efa71a1d69184d666ea6/jetified-wisview.sdk/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/wisview.sdk/build/.transforms/0248237e99b8efa71a1d69184d666ea6/jetified-wisview.sdk/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

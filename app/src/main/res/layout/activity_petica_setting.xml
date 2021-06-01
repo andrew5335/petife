@@ -16,6 +16,10 @@
             type="FeedModeType" />
 
         <variable
+            name="feedMode2"
+            type="FeedModeType" />
+
+        <variable
             name="peticaStatus"
             type="kr.co.ainus.petife2.model.PeticaStatus" />
 
@@ -63,7 +67,39 @@
                     android:background="@drawable/bg_press_gray_white"
                     android:gravity="start|center_vertical"
                     android:paddingLeft="8dp"
-                    android:text="@string/serveMode" />
+                    android:text="@string/feedSetting" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/waterModeBtnArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="@color/transparent"
+                    android:drawableRight="@drawable/ic_arrow_next_small"
+                    android:gravity="end|center_vertical"
+                    android:paddingRight="8dp"
+                    android:theme="@style/Base.Widget.AppCompat.Button.Borderless"
+                    app:feedMode="@{feedMode2}" />
+
+                <Button
+                    android:id="@+id/btn_water_mode"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_press_gray_white"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="8dp"
+                    android:text="@string/waterSetting" />
 
             </FrameLayout>
 
